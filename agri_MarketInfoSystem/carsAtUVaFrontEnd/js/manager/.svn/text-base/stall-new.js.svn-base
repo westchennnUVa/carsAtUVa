@@ -1,0 +1,46 @@
+$(function(){
+	Config.userJudge();
+	var pathMatr = (window.location.pathname.split('/'))[2].split('.');
+	Config.PageJudge(pathMatr[0]);
+	stallinfo.loadData();
+});
+var strhtml;
+function addhtml(obj){
+	            	strhtml += "<tr><td>"+obj.userid+"</td>"+
+              						"<td>"+obj.username+"</td>"+
+              						"<td>"+obj.stallid+"</td>"+
+              						"<td>"+obj.stallcode+"</td>"+
+                                    "<td><label>通过<input type='checkbox' class='ios-switch green' onclick='stallinfo.shenhe(" + obj.stallid +",1)' /><div><div></div></div></label><label>不通过<input type='checkbox' class='ios-switch red' onclick='stallinfo.shenhe(" + obj.stallid +",0)' /><div><div></div></div></label></td>"+
+                                "</tr>"; 	
+}
+var stallinfo = {
+	loadData:function(){
+		ajaxurl = Config.hostIp+"/AgricultureMasterNewMessage?jsoncallback=?";
+		$.getJSON(ajaxurl,function(data){
+			strhtml ="";
+			$("#stallht").html("");
+			var list = data.data;
+			for(var i = 0;i < list.length;i++){	
+				var obj = list[i];
+					addhtml(obj);
+					console.log(strhtml);
+			}						
+//			console.log(strhtml);
+			$("#stallht").html(strhtml);		
+		})
+	},
+	shenhe:function(barginid,em){
+		if(em == 0){
+		ajaxurl = Config.hostIp+"/AgriculturePassStallRequest?stallid="+barginid+"&Option=NO"+"&jsoncallback=?";
+		}
+		else if(em == 1){
+		ajaxurl = Config.hostIp+"/AgriculturePassStallRequest?stallid="+barginid+"&Option=YES"+"&jsoncallback=?";			
+		}
+		$.getJSON(ajaxurl,function(data){
+			console.log(1);
+			stallinfo.loadData();
+			
+		})
+	}
+	
+}

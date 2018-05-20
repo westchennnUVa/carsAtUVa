@@ -1,0 +1,101 @@
+$(function(){
+	console.log(1);
+	loadData();
+});
+function getyear(_time){
+	var year = _time.substr(0,4);
+	return year;
+}
+function getmonth(_time){
+	var month = _time.substring(5,7);
+	var day = _time.substring(8,10);
+	var mon_day = month + "月"+ day +"日";
+	return mon_day;
+}
+function gethour(_time){
+	var hour = _time.substring(11,13);
+	var minute = _time.substring(14,16);
+	var hou_min = hour +"时"+ minute+ "分";
+	return hou_min;
+}
+function cutStr(text){
+	var newText = text.substring(0,12);
+	var n = text.length;
+	var result;
+	if(n>12){
+		result = newText + "...";
+		}
+	else result = text;
+	return result;
+}
+function searchTime(){
+	var startTime = $("#datestart").val();
+	var finishTime = $("#datefinish").val();
+	console.log(startTime);
+}
+jeDate.skin('gray');
+jeDate({
+	dateCell:"#datestart",//isinitVal:true,
+	format:"YYYY-MM",
+	isTime:false, //isClear:false,
+	minDate:"2016-11-8 00:00:00",
+	maxDate:"2016-12-8 00:00:00"
+})
+jeDate({
+	dateCell:"#datefinish",
+	format:"YYYY年MM月DD日 hh:mm:ss",
+	isinitVal:true,
+	isTime:true, //isClear:false,
+	minDate:"2014-09-19 00:00:00",
+	okfun:function(val){alert(val)}
+})
+
+    //alert("YYYY/MM".match(/\w+|d+/g).join("-"))
+console.log(getmonth("1998-01-01 00:00:00.000"));
+function loadData(){
+	$.ajax({
+		type:"get",
+		url:"new.json",
+		dataType:"json",
+		success:function(resultdata){
+			var strhtml ="";
+			console.log(2);
+			$("#new-info").html("");
+			$.each(resultdata,function(i,item){
+				var _time = item["newsDate"];
+				var month = getmonth(_time);
+				var year = getyear(_time);
+				var hour = gethour(_time);
+				var _text = item["newsContext"];
+				var _newtext = cutStr(_text);
+				strhtml+="<div class='events-grid col-md-6'><div class='col-md-3 event-month wthree'>"+
+					"<h3 id='news_time' class='time' style'margin-bottom: 0.5em;'>"+year+"</h3>"+
+					"<p class='time time-month'>"+month+"</p>"+
+					"<p class='time time-hour'>"+hour+"</p>"+
+				"</div>"+
+				"<div class='col-md-2 event-user wthree' style='font-size: 2em;'>"+
+					item["user_name"]+				
+				"</div>"+
+				"<div class='col-md-7 event-text left'><h4 id='news_header'>"+item["newsHeader"]+"</h4>"+
+					"<p id='news_context'>"+_newtext+"</p>"+
+					"<a href='single.html'>Read More</a>"+					
+                         "<button class='btn btn-danger btn-do'><i class='fa fa-pencil'></i> 删除</button>"+
+                    	 "<button class='btn btn-primary btn-do'><i class='fa fa-edit'></i> 编辑</button>"+
+                            	 
+				"</div></div>"
+			})
+			console.log(strhtml);
+			$("#new-info").html(strhtml);			
+		},
+		 error: function(err) {
+				console.log(err);
+			}
+		
+		
+	})
+}
+
+
+
+
+

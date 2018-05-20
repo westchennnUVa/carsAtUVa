@@ -1,0 +1,610 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>用户信息</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="text/javascript" src="js/public/top.js" ></script>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<!-- Place favicon.ico in the root directory -->
+
+<!-- Boostrap CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+<!-- Owl Carousel -->
+<link rel="stylesheet" href="css/owl.carousel.css">
+<link rel="stylesheet" href="css/owl.transitions.css">
+
+<!-- Animate CSS -->
+<link rel="stylesheet" href="css/animate.css">
+
+<!-- Lightbox CSS -->
+<link rel="stylesheet" href="css/venobox.css">
+
+<!-- Google Web Fonts -->
+<link href="css/googleapi/Lora.css" rel="stylesheet">
+<link href="css/googleapi/OpenSans.css" rel="stylesheet">
+<link href="css/googleapi/Roboto.css" rel="stylesheet">
+
+<!-- Font Awesome Icon -->
+<link rel="stylesheet" href="css/font-awesome.min.css" />
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" type="text/css" href="css/contectstyle.css"/>
+<link rel="stylesheet" href="css/titatoggle-dist.css" />   
+<link rel="stylesheet" href="css/popModal.min.css" />
+<link rel="stylesheet" href="css/balloon.css" />
+<link rel="stylesheet" type="text/css" href="css/ns-default.css" />
+<link rel="stylesheet" type="text/css" href="css/ns-style-growl.css" />
+<link rel="stylesheet" href="css/btn1.css" />
+<link href="css/font/MaterialIcons.css" rel="stylesheet">
+
+<style>
+	.xuanze{width: 130px;}
+	em, i {font-style: normal;}
+	.top-btn{font-size: 17px;font-weight: bold;padding: 25px !important;}
+	.dropdown-style{min-width: auto !important;}
+	.list-inline li{font-size: 15px;}
+	.latest-work{padding: 90px 0;}
+	/*登录框样式*/
+	.top-userName{color: #FF8724 !important;outline: 0;cursor: pointer;font-size: 17px;font-weight: bold;padding: 25px 10px 25px 0 !important;}
+	.top-userName:hover{text-decoration: none;}
+	form .form-group label{display: inline-block;}
+	form .form-group input{width: 400px;display: inline-block;}
+	form .form-group .input-group :focus{
+		-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 10px rgb(31, 166, 218) !important;
+		box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 10px rgb(31, 166, 218) !important;
+		border: 1px solid rgb(31, 166, 218) !important;}
+	.input-group-addon{background-color: rgba(255, 141, 0, 0.72);color: #fff;}
+	form .checkbox{float: right;margin-top: 0px !important;}
+	.checkbox-slider--b-flat input + span {padding-left: 30px;}
+	.lr-btn{text-align:right;}
+	.lr-btn button{width: 100%;}
+	#login-btn, #register-btn{font-weight: bold;}
+	.modal-footer p{margin: 0;}
+	.modal-footer p a{text-decoration: underline;cursor: pointer;color: rgb(255, 135, 36);}
+	.modal-body{padding: 45px 65px 15px 60px !important;}
+	.modal-header{box-shadow: 0px 3px 8px rgb(146, 148, 0);}
+	.modal-body .form-control{font-size: 16px;}
+	.changePwd-part{width:auto !important;}
+	.login-footer, .register-footer{display: inline-block;float: right;}
+	#messInfo{display: inline-block;float: left;color: red;font-weight: bold;}
+	/*登录框样式*/        	
+	.ns-box{width: 200px;text-align: center;left: 45% !important;z-index: 1500;}
+	.ns-box p{font-size: 16px !important;color: #fff !important;}
+	.bargain-header {background: url(./images/blog/bargain-header-bg.jpg);background-repeat: no-repeat;-webkit-background-size: cover;background-size: cover;background-position: center top;background-attachment: fixed;}
+	.pagination>li>a, .pagination>li>span{color: #999;}
+	.pagination>li>a:hover, .pagination>li>span:hover{color: #ff8724;}
+	.pagination>li>span>input{color:#000}
+	.pagination>li>span:nth-child(2):hover{background: #fff !important;color: #999 !important;}
+	/*vbox修改样式*/
+	.vbox-title{height: 50px !important;line-height: 38px !important;font-size: 18px !important;}
+	.imgDiv{margin-left: 100px;width: 28%;min-height: 25.87em;display: inline-block;background: rgba(0, 0, 0, 0.45) !important;
+	vertical-align:middle;z-index: 99;text-align: left;padding: 35px 30px !important;}
+	.imgDiv p{color: #fff !important;line-height: 30px !important;}
+	.imgDiv .curr_price{font-size: 22px;color: rgb(161, 164, 199);}
+	.imgDiv .ori_price{color: #555;}
+	.imgDiv .detail_overflow{display: inline;overflow-y: scroll;}
+	.imgDiv .btn-more{margin-left: 25px;border: 2px solid #fff;border-radius: 12px;background: none;color: #fff;}
+	.imgDiv .btn-more:hover{background: rgba(93, 48, 1, 0.91);}
+	.imgDiv #btn-packup{margin-left: 194px !important;}
+	.vbox-close:hover{background: #71441f url(./images/lightbox/close.gif) no-repeat scroll center center;}
+	.vbox-content{margin-bottom: 0 !important;}
+	.vbox-content img, .vbox-content .imgDiv{vertical-align: top !important;}
+	/*vbox修改样式*/
+	/*动画样式*/
+	.anima-in{-webkit-animation:fadeInDown 1s .2s ease both;-moz-animation:fadeInDown 1s .2s ease both;}
+	#anima-img{-webkit-animation:rollIn 1s .2s ease both;-moz-animation:rollIn 1s .2s ease both;}
+	@-webkit-keyframes rollIn{
+	0%{opacity:0;
+	-webkit-transform:translateX(-100%) rotate(-120deg)}
+	100%{opacity:1;
+	-webkit-transform:translateX(0px) rotate(0deg)}
+	}
+	@-moz-keyframes rollIn{
+	0%{opacity:0;
+	-moz-transform:translateX(-100%) rotate(-120deg)}
+	100%{opacity:1;
+	-moz-transform:translateX(0px) rotate(0deg)}
+	}
+	#anima-div{-webkit-animation:fadeInRightBig 1s .2s ease both;-moz-animation:fadeInRightBig 1s .2s ease both;}
+	@-webkit-keyframes fadeInRightBig{
+	0%{opacity:0;
+	-webkit-transform:translateX(1000px)}
+	100%{opacity:1;
+	-webkit-transform:translateX(0)}
+	}
+	@-moz-keyframes fadeInRightBig{
+	0%{opacity:0;
+	-moz-transform:translateX(1000px)}
+	100%{opacity:1;
+	-moz-transform:translateX(0)}
+	}
+	.filter{position: relative;}
+	.filter:after{background: #FF8724;width: 0%;height: 100%;content: '';top: 0;left: 0;position: absolute;
+		z-index: -1;-webkit-transition: all 0.2s;-moz-transition: all 0.2s;transition: all 0.2s;}
+	.filter:hover:after{width: 100%;}
+	/*动画样式*/
+	.latest-work .portfolio-work .controls button{width: 9%;}
+	    .add-con{margin-left: 0.25em;margin-top: -0.2px;}
+    /*body{background-color: #000000;}
+	.top-btn{font-size: 18px;padding: 19px !important;}
+	.dropdown-style{min-width: auto !important;}*/
+	.information-con{margin-left: 0.5em;}
+	/*.list-inline li{font-size: 17px;}*/
+	#user-info{margin-top: 10px;}
+	.user_list{
+		/*background-image: -moz-linear-gradient(left top, #000000, #BEBEBE); /* Firefox */
+		/*background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #000000), color-stop(1, #BEBEBE)); /* Saf4+, Chrome */*/
+		/*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#', GradientType='0'); /* IE*/*/
+		width: 100%;height: 800px;margin-top: 0px;
+		text-align:center;}
+	.top-title{font-size: 25px;color:#fff;margin-left: 20em;}
+	thead{font-size: 25px;color: #1B6D85;}
+	tbody{font-size: 15px;color: #00FFFF;}
+	tr{height: 50px;text-align: center;}
+	th{line-height:50px;text-align: center;}
+	.w3agile{margin-bottom: 6em;}
+	.form-group{margin-left:8em;}
+	/*.idtnty{margin-top: 5em;}*/
+	/* 分页数字链接样式 */
+	.pagebox{padding:50px 30px 30px 30px;}
+	.paging a,.paging span.Bg,.paging a:hover,.paging a.cur,.paging a:hover span.Bg,.paging a.cur span.Bg{background:url(images/pagebg.png) no-repeat;}
+	.paging{text-align:center;font-size:px;}
+	.paging a{padding-bottom:4px;display:inline-block;background-position:0 -134px;padding-bottom:11px;}
+	.paging a:hover{text-decoration:none;}
+	.paging b{font-weight:100;opacity:0;*visibility:hidden;}
+	.paging span.Bg{
+		width:58px;height:17px;line-height:17px;padding-left:5px;text-align:left;margin-right:1px;display:inline-block;background-position:0px 11px;cursor:pointer;
+		-moz-transition:all 0.3s ease;
+		-webkit-transition:all 0.3s ease;
+		-o-transition:all 0.3s ease;
+	}
+	.paging a:link,.paging a:visited{color:#266EB0;}
+	.paging a:hover,.paging a.cur{color:#fff;background-position:0px -93px;}
+	.paging a:hover span.Bg,.paging a.cur span.Bg{background-position:0px -63px;}
+	.paging a:hover span.Bg b,.paging a.cur span.Bg b{opacity:1;*visibility:visible;}
+	/* 上下翻页样式 */
+	.paging a.previous,.paging a.previous span.Bg,.paging a.previous b,.paging a.previous:hover,.paging a.previous:hover span.Bg,.paging a.previous:hover b,.paging a.nextpage,.paging a.nextpage span.Bg,.paging a.nextpage b,.paging a.nextpage:hover,.paging a.nextpage:hover span.Bg,.paging a.nextpage:hover b{background:url(images/prev-next-bg.png) no-repeat}
+	.paging a.previous{background-position:0px -72px;}
+	.paging a.previous span.Bg{width:61px;padding-left:0px;background-position:0px -121px;}
+	.paging a.previous b{background-position:0px 17px;}
+	.paging a.previous:hover{background-position:0px -25px;}
+	.paging a.previous:hover span.Bg{background-position:0px -108px;}
+	.paging a.previous:hover b{background-position:0px 4px;opacity:1;*visibility:visible;}
+	.paging a.nextpage{background-position:-61px -72px;}
+	.paging a.nextpage span.Bg{width:61px;padding-left:0px;background-position:-61px -121px;}
+	.paging a.nextpage b{background-position:-61px 17px;}
+	.paging a.nextpage:hover{background-position:-61px -25px;}
+	.paging a.nextpage:hover span.Bg{background-position:-61px -108px;}
+	.paging a.nextpage:hover b{background-position:-61px 4px;opacity:1;*visibility:visible;}
+	.paging a.previous b,.paging a.nextpage b{
+		width:61px;display:inline-block;height:17px;opacity:1;*visibility:visible;
+		-moz-transition:all 0.6s ease;
+		-webkit-transition:all 0.6s ease;
+		-o-transition:all 0.6s ease;
+	}
+</style>
+
+<script type="text/javascript" src="js/jquery.min.js" ></script>
+<script type="text/javascript" src="js/manager/user-list.js" ></script>
+
+</head>
+<body>
+<!-- ============================
+	Header Section
+============================ -->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 header-top-contact">
+                    <ul class="list-unstyled list-inline">
+                    	<li>联系管理员:</li>
+                        <li><i class="fa fa-mobile"></i>13368347746</li>
+						<li><i class="fa fa-envelope"></i>theoga85@gmail.com</li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 header-top-social">
+					<ul class="list-unstyled list-inline">
+						<li class="top-consult-btn"><a href="" data-toggle="modal" data-target="#myModal" class="top-btn" onclick="LG.topLogin()"><i class="fa fa-user"></i>登录</a></li>
+						<li class="top-consult-btn"><a href="" data-toggle="modal" data-target="#myModal" class="top-btn" onclick="LG.topRegister()"><i class="fa fa-user-plus"></i>注册</a></li>
+						<li class="top-userInfor" style="display: none;color: #FFFFFF;position: relative;">
+							欢迎回来！<a class="top-userName" id="top-userName"></a> 
+							<ul class="dropdown-menu dropdown-style" style="left: 70px;top: 34px;">
+								<li><a onclick="LG.changePwd()">修改密码</a></li>
+								<li><a onclick="LG.logoutAccount()">退出账号</a></li>					
+							</ul>
+						</li>
+					</ul>
+					<!-- Modal -->
+					<div id="myModal" class="modal fade" role="dialog">
+					  <div class="modal-dialog">
+						<!-- Modal content-->
+						<div class="modal-content">
+						  <div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title login-header">登录</h4>
+							<h4 class="modal-title register-header">注册</h4>
+							<h4 class="modal-title changePwd-part">修改密码</h4>						
+						  </div>
+						  <div class="modal-body">
+							<form id="loginForm">
+								<div class="form-group">
+									<div class="input-group login-part">
+										<div class="input-group-addon"><i class="fa fa-user-circle"></i></div>
+										<input type="text" class="form-control" id="userAccount" placeholder="在此输入用户名" />
+									</div>									
+								</div>
+								<div class="form-group">
+									<div class="input-group login-part">
+										<div class="input-group-addon" style="padding: 15px;"><i class="fa fa-lock"></i></div>
+										<input type="password" class="form-control" id="userPwd" placeholder="在此输入密码"/>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="input-group regis-part">
+										<div class="input-group-addon"><i class="fa fa-user-o"></i></div>
+										<input type="text" class="form-control" id="userName" placeholder="在此输入姓名" />
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="input-group regis-part">
+										<div class="input-group-addon" style="padding: 10px;"><i class="fa fa-id-card"></i></div>
+										<input type="text" class="form-control" id="userIdentification" placeholder="在此输入身份证号" />
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="input-group regis-part">
+										<div class="input-group-addon"><i class="fa fa-phone"></i></div>
+										<input type="text" class="form-control" id="userPhone" placeholder="在此输入手机号码" />
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="input-group changePwd-part">
+										<div class="input-group-addon" style="padding: 15px;"><i class="fa fa-lock"></i></div>
+										<input type="password" class="form-control" id="userOldPwd" placeholder="在此输入原密码"/>
+									</div>
+								</div><div class="form-group">
+									<div class="input-group changePwd-part">
+										<div class="input-group-addon" style="padding: 15px;"><i class="fa fa-lock"></i></div>
+										<input type="password" class="form-control" id="userNewPwd" placeholder="在此输入新密码"/>
+									</div>
+								</div>
+								<!--<div class='checkbox checkbox-slider--b-flat checkbox-slider-warning login-part'>
+									<label>
+										<input type='checkbox' name="isRemberPwdId" id="isRemberPwdId" />
+										<span id='cb-slider-text1' for="isRemberPwdId">记住密码</span>
+									</label>
+								</div>-->
+								<div class="lr-btn">
+									<button type="button" class="btn btn-primary login-part" id="login-btn" onclick="LG.userLogin()">登&nbsp;&nbsp;&nbsp;录</button>
+									<button type="button" class="btn btn-primary regis-part" id="register-btn" onclick="LG.userRegister()">注&nbsp;&nbsp;&nbsp;册</button>
+									<button type="button" class="btn btn-primary changePwd-part" id="register-btn" onclick="LG.confirmChange()">修&nbsp;&nbsp;改</button>
+									<button type="button" class="btn btn-primary changePwd-part" id="register-btn" onclick="LG.cancelChange()">取&nbsp;&nbsp;消</button>								
+								</div>							
+							</form>
+						  </div>
+						  <div class="modal-footer">
+						  	<p id="messInfo"></p>
+						  	<p class="login-footer regis-part bothFooter">已有账号？快去<a onclick="LG.bottomLogin()">登录</a>吧！</p>
+						  	<p class="register-footer bothFooter">还没有账号？先来<a onclick="LG.bottomRegister()">注册</a>吧！</p>				  	
+						  </div>
+						</div>
+					  </div>
+					</div><!-- End Modal -->
+				</div>
+            </div>
+        </div>
+    </header><!-- End Header -->
+    
+    <!-- ==============================
+        Intro Section
+    ============================== -->
+    <section class="intro user-header">
+        <div class="main-nav">
+            <nav class="navbar" id="main-navbar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button> 
+                                <a class="navbar-brand" href="index.html"><img src="images/brand-logo-modify1.png" alt=""></a>
+                            </div>
+                            <div class="collapse navbar-collapse nopadding" id="navbar-collapse">
+								<ul class="nav navbar-nav main-menu">
+									<li class=""><a href="index.html">首页</a></li>
+									<li class=""><a href="agri_news.html">农资资讯</a></li>
+									<li class=""><a href="bargain.html">特价商品</a></li>
+									<li class="ordUser-part"><a href="stall_Infor.html">摊位信息</a></li>
+									<li class="ordUser-part"><a href="productOfUser.html">商品管理</a></li>
+									<li class=""><a href="nutrition_match.html">营养搭配</a></li>
+									<li class="clearfix admin-part active"><a href="#">信息管理</a>
+										<ul class="dropdown-menu dropdown-style">
+											<li><a href="userList.html">用户管理</a></li>
+											<li><a href="productList.html">商品管理</a></li>
+											<li><a href="bargin-list.html">摊位管理</a></li>
+											<li><a href="newsList.html">资讯管理</a></li>
+										</ul>
+									</li>
+									<li class=""><a href="team.html">关于我们</a></li>
+									<li class="search admin-part">																											
+										<a href="stall-news.html"><i class="fa fa-bell" id="newsstall"></i></a>
+									</li>
+								</ul>
+                            </div>
+                        </div>
+                    </div> 
+                </div><!-- end conainer -->
+            </nav><!-- end navbar -->
+        </div><!-- Main Menu -->
+<div class="page-header-image">
+			<div class="container">
+			    <div class="row">
+			        <div class="col-md-12">
+			           <div class="idtnty">
+					    	<div id="wrap">
+						    	<a class="btn-slide2" onclick="show_user()">
+								  <span class="circle2"><i class="fa fa-user"></i></span>
+								  <span class="title2">用户</span> 
+								  <span class="title-hover2">所有用户信息</span>
+								</a>
+								<a class="btn-slide" id="mar-user" onclick="mar_user()">
+								  <span class="circle"><i class="fa fa-user-circle-o"></i></span>
+								  <span class="title">管理员</span>
+								  <span class="title-hover">所有管理员信息</span>
+								</a>
+								<a class="btn-slide2" onclick="bar_user()">
+								  <span class="circle2"><i class="fa fa-user"></i></span>
+								  <span class="title2">店家</span> 
+								  <span class="title-hover2">所有商家信息</span>
+								</a>
+						</div>
+					<div class="top-title" id="min_identity">			
+						全部人员信息
+					</div>
+			        </div>
+			    </div>
+			</div>
+		</div>
+    </section><!-- End Intro -->
+    
+    </div>
+	<div class="user_list">
+	
+		<!--educate logos start here-->
+<div class="educate">
+	<div class="">
+		<div class="education-main">
+			<ul class="ch-grid">
+               <div id="user-info">
+               	
+               </div>	
+               
+					<div class="clearfix"> </div>
+			 </ul>
+		 </div>
+		 <div class="container fixed_div l12 s12 center">
+				    <ul class="pagination">
+					    <li class=""><a id="c_l"><span class="fa fa-hand-o-left" onclick="qian(0)"></i></a></li>
+					    <li class=""><a class="btn btn-default" onclick="xiang(0)">前一页</a></li>	
+					    <li class=""><a id="id_1" class="btn btn-default" onclick="fenye(1)">1</a></li>
+					    <li class=""><a id="id_2" class="btn btn-default" onclick="fenye(2)">2</a></li>
+					    <li class=""><a id="id_3" class="btn btn-default" onclick="fenye(3)">3</a></li>
+					    <li class=""><a id="id_4" class="btn btn-default" onclick="fenye(4)">4</a></li>
+					    <li class=""><a id="id_5" class="btn btn-default" onclick="fenye(5)">5</a></li>
+					    <li class=""><a class="btn btn-default" onclick="xiang(1)">后一页</a></li>
+					    <li class=""><a id="c_r"><span class="fa fa-hand-o-right" onclick="qian(1)"></i></a></li>
+					     <li>第<input type="text" id="gopage" style="width: 30px;" value="1"/>页</li>
+					     <li><a onclick="gopage()">跳转</a></li>
+					    <li><a id="pagenow">第1页</a></li>
+				    </ul>
+					</div>
+					
+	</div>	
+</div>
+<!-- Modal -->
+<div id="myModal_do" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+	<!-- Modal content-->
+	<div class="modal-content">
+	  <div class="modal-header" style="background-color: #D58512">
+		<button type="button" class="close" data-dismiss="modal">&times;</button>
+		<h4 class="modal-title">编辑用户<span id="userID"></span>信息</h4>
+	  </div>
+	  <div class="modal-body">
+		<form action="#" method="POST">
+			<div class="">
+				<div class="row">
+					<div class="col-md-3" style="line-height: 2.5em;font-size: 1.2em;color: #3C763D;font-weight: 600;">
+						姓&nbsp;名：
+					</div>
+					<div class="col-md-4">
+						<input type="text" class="form-control" id="user-name" value="李鹏飞"/>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-3" style="line-height: 2.5em;font-size: 1.2em;color: #3C763D;font-weight: 600;">
+						用户名：
+					</div>
+					<div class="col-md-4">
+						<input type="text" class="form-control" id="user-login" value="lpf"/>
+					</div>
+				</div>	
+				<div class="row">
+					<div class="col-md-3" style="line-height: 2.5em;font-size: 1.2em;color: #3C763D;font-weight: 600;">
+						手机号：
+					</div>
+					<div class="col-md-4">
+						<input type="text" class="form-control" id="user-phone" value="13340211330"/>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-3" style="line-height: 2.5em;font-size: 1.2em;color: #3C763D;font-weight: 600;">
+						身份证号：
+					</div>
+					<div class="col-md-4">
+						<input type="text" class="form-control" id="user-code" value="13340211330"/>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-3" style="line-height: 2.5em;font-size: 1.2em;color: #3C763D;font-weight: 600;">
+						用户身份：
+					</div>
+					<div class="col-md-4">
+						<select name="" class="form-control xuanze" id="euserid">
+							<option value="1">用户</option>
+							<option value="2">管理员</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<!--<button class="btn btn-default" onclick="userinfo.updata(" + obj.userID + ")"><i class=" fa fa-refresh "></i> 提交</button>-->
+			
+		</form>
+	  </div>
+	  <div class="modal-footer">
+	  	<div id="tijiao"></div>
+	  </div>
+	</div>
+	  </div>
+</div><!-- End Modal -->
+<div id="myModal_add" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+	<!-- Modal content-->
+	<div class="modal-content">
+	  <div class="modal-header" style="background-color: #D58512">
+		<button type="button" class="close" data-dismiss="modal">&times;</button>
+		<h4 class="modal-title">添加用户<span id="userID"></span></h4>
+	  </div>
+	  <div class="modal-body">
+		<form action="#" method="POST">
+			<div class="">
+				<div class="row">
+					<div class="col-md-3" style="line-height: 2.5em;font-size: 1.2em;color: #3C763D;font-weight: 600;">
+						姓&nbsp;名：
+					</div>
+					<div class="col-md-4">
+						<input type="text" class="form-control" id="_username" value=""/>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-3" style="line-height: 2.5em;font-size: 1.2em;color: #3C763D;font-weight: 600;">
+						用户名：
+					</div>
+					<div class="col-md-4">
+						<input type="text" class="form-control" id="user_login" value=""/>
+					</div>
+				</div>
+								<div class="row">
+					<div class="col-md-3" style="line-height: 2.5em;font-size: 1.2em;color: #3C763D;font-weight: 600;">
+						密&nbsp;码：
+					</div>
+					<div class="col-md-4">
+						<input type="text" class="form-control" id="user_pss" value=""/>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-3" style="line-height: 2.5em;font-size: 1.2em;color: #3C763D;font-weight: 600;">
+						手机号：
+					</div>
+					<div class="col-md-4">
+						<input type="text" class="form-control" id="_userphone" value=""/>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-3" style="line-height: 2.5em;font-size: 1.2em;color: #3C763D;font-weight: 600;">
+						身份证号：
+					</div>
+					<div class="col-md-4">
+						<input type="text" class="form-control" id="_usercode" value=""/>
+					</div>
+				</div>
+								<div class="row">
+					<div class="col-md-3" style="line-height: 2.5em;font-size: 1.2em;color: #3C763D;font-weight: 600;">
+						用户身份：
+					</div>
+					<div class="col-md-4">
+						<select name="add_useid" class="form-control xuanze" id="add_useid">
+							<option value="1">用户</option>
+							<option value="2">管理员</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			
+		</form>
+	  </div>
+	  <div class="modal-footer">
+	  	<button class="btn btn-default" onclick="userinfo.adduser()"><i class=" fa fa-refresh "></i> 提交</button>
+	  </div>
+	</div>
+	  </div>
+</div><!-- End Modal -->
+<!--educate logos end here-->
+</div>
+
+<!-- ============================
+		Footer
+	============================ -->
+	<footer>
+		<div class="footer-bottom">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-8 copyright">
+						<p>Copyright &copy; 2016.CQU All rights reserved.</p>
+					</div>
+					<div class="col-xs-4 scrool-to-top">
+						<p><a href="#scrolltop"><i class="fa fa-arrow-up"></i></a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer><!-- End Footer -->
+
+	<!-- jQuery Library -->
+<script src="js/jquery-1.12.0.min.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="js/bootstrap.min.js"></script>
+
+<!-- Sticky JS -->
+<script src="js/jquery.sticky.js"></script>
+
+<!-- MixitUp JS -->
+<script src="js/jquery.mixitup.js"></script>
+
+<!-- Lightbox JS -->
+<script src="js/venobox.js"></script>
+
+<!-- Owl Carousel -->
+<script src="js/owl.carousel.min.js"></script>
+
+<!-- jQuery Counter Up -->
+<script src="js/waypoints.min.js"></script>
+<script src="js/jquery.counterup.min.js"></script>
+
+<!-- WOW JS -->
+<script src="js/wow.min.js"></script>
+
+<!-- Plugins JS -->
+<script src="js/plugins.js"></script>
+<script src="js/modernizr.custom.js"></script>	
+<script src="js/classie.js"></script>	
+<script src="js/notificationFx.js"></script>
+<!-- Custom JS -->
+<script src="js/custom.js"></script>
+<script type="text/javascript" src="js/public/top.js" ></script>
+<script type="text/javascript" src="js/public/login.js" ></script>
+
+</body>
+	
+</html>

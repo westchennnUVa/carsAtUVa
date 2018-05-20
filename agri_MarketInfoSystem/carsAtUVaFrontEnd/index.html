@@ -1,0 +1,474 @@
+﻿<!doctype html>
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>CarsAtUVa</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<!-- Place favicon.ico in the root directory -->
+
+<!-- Boostrap CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+<!-- Owl Carousel -->
+<link rel="stylesheet" href="css/owl.carousel.css">
+<link rel="stylesheet" href="css/owl.transitions.css">
+
+<!-- Animate CSS -->
+<link rel="stylesheet" href="css/animate.css">
+
+<!-- Lightbox CSS -->
+<link rel="stylesheet" href="css/venobox.css">
+
+<!-- Google Web Fonts -->
+<link href="css/googleapi/Lora.css" rel="stylesheet">
+<link href="css/googleapi/OpenSans.css" rel="stylesheet">
+<link href="css/googleapi/Roboto.css" rel="stylesheet">
+
+
+
+<!-- Font Awesome Icon -->
+<link rel="stylesheet" href="css/font-awesome.min.css" />
+
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/titatoggle-dist.css" />  
+<link rel="stylesheet" type="text/css" href="css/ns-default.css" />
+<link rel="stylesheet" type="text/css" href="css/ns-style-growl.css" />
+<style>
+	.top-btn{font-size: 17px;font-weight: bold;padding: 25px !important;}
+	.dropdown-style{min-width: auto !important;}
+	.list-inline li{font-size: 15px;}
+	/*登录框样式*/
+	.top-userName{color: #FF8724 !important;outline: 0;cursor: pointer;font-size: 17px;font-weight: bold;padding: 25px 10px 25px 0 !important;}
+	.top-userName:hover{text-decoration: none;}
+	form .form-group label{display: inline-block;}
+	form .form-group input{width: 400px;display: inline-block;}
+	form .form-group .input-group :focus{
+		-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 10px rgb(31, 166, 218) !important;
+		box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 10px rgb(31, 166, 218) !important;
+		border: 1px solid rgb(31, 166, 218) !important;}
+	.input-group-addon{background-color: rgba(255, 141, 0, 0.72);color: #fff;}
+	form .checkbox{float: right;margin-top: 0px !important;}
+	.checkbox-slider--b-flat input + span {padding-left: 30px;}
+	.lr-btn{text-align:right;}
+	.lr-btn button{width: 100%;}
+	#login-btn, #register-btn{font-weight: bold;}
+	.modal-footer p{margin: 0;}
+	.modal-footer p a{text-decoration: underline;cursor: pointer;color: rgb(255, 135, 36);}
+	.modal-body{padding: 45px 65px 15px 60px !important;}
+	.modal-header{box-shadow: 0px 3px 8px rgb(146, 148, 0);}
+	.modal-body .form-control{font-size: 16px;}
+	.changePwd-part{width:auto !important;}
+	.login-footer, .register-footer{display: inline-block;float: right;}
+	#messInfo{display: inline-block;float: left;color: red;font-weight: bold;}
+	/*登录框样式*/
+	.ns-box{width: 200px;text-align: center;left: 45% !important;z-index: 1500;}
+	.ns-box p{font-size: 16px !important;color: #fff !important;}
+	#newsstall{color: red;font-size: 1.2em;}
+</style>
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<![endif]-->
+</head>
+<body>
+<!-- Preloader -->
+<div id="preloader">
+	<div id="status">&nbsp;</div>
+</div>
+<!-- ============================
+	Header Section
+============================ -->
+<header> 
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-8 header-top-contact">
+				<ul class="list-unstyled list-inline">
+					<li>Contact us:</li>
+					<li><i class="fa fa-envelope"></i>xc2vb@virginia.edu</li>
+					<li><i class="fa fa-envelope"></i>qs2ea@virginia.edu</li>
+				</ul>
+			</div>
+			<div class="col-sm-4 header-top-social">
+				<ul class="list-unstyled list-inline">
+					<li class="top-consult-btn"><a href="" data-toggle="modal" data-target="#myModal" class="top-btn" onclick="LG.topLogin()"><i class="fa fa-user"></i>Sign in</a></li>
+					<li class="top-consult-btn"><a href="" data-toggle="modal" data-target="#myModal" class="top-btn" onclick="LG.topRegister()"><i class="fa fa-user-plus"></i>Sign up</a></li>
+					<li class="top-userInfor" style="display: none;color: #FFFFFF;position: relative;">
+						Welcome back！<a class="top-userName" id="top-userName"></a>
+						<ul class="dropdown-menu dropdown-style" style="left: 70px;top: 34px;">
+							<li><a onclick="LG.changePwd()">Password Reset</a></li>
+							<li><a onclick="LG.logoutAccount()">Sign Out</a></li>
+						</ul>
+					</li>
+				</ul>
+				<!-- Modal -->
+				<div id="myModal" class="modal fade" role="dialog">
+				  <div class="modal-dialog">
+					<!-- Modal content-->
+					<div class="modal-content">
+					  <div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title login-header">Sign in</h4>
+						<h4 class="modal-title register-header">Sign up</h4>
+						<h4 class="modal-title changePwd-part">Password Reset</h4>
+					  </div>
+					  <div class="modal-body">
+						<form id="loginForm">
+							<div class="form-group">
+								<div class="input-group login-part">
+									<div class="input-group-addon"><i class="fa fa-user-circle"></i></div>
+									<input type="text" class="form-control" id="userAccount" placeholder="Input username here" />
+								</div>									
+							</div>
+							<div class="form-group">
+								<div class="input-group login-part">
+									<div class="input-group-addon" style="padding: 15px;"><i class="fa fa-lock"></i></div>
+									<input type="password" class="form-control" id="userPwd" placeholder="Input password here"/>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="input-group regis-part">
+									<div class="input-group-addon"><i class="fa fa-user-o"></i></div>
+									<input type="text" class="form-control" id="userName" placeholder="Input name here" />
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="input-group regis-part">
+									<div class="input-group-addon" style="padding: 10px;"><i class="fa fa-id-card"></i></div>
+									<input type="text" class="form-control" id="userIdentification" placeholder="Input your ID here" />
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="input-group regis-part">
+									<div class="input-group-addon"><i class="fa fa-phone"></i></div>
+									<input type="text" class="form-control" id="userPhone" placeholder="Input your telephone number" />
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="input-group changePwd-part">
+									<div class="input-group-addon" style="padding: 15px;"><i class="fa fa-lock"></i></div>
+									<input type="password" class="form-control" id="userOldPwd" placeholder="Input your orginal password here"/>
+								</div>
+							</div><div class="form-group">
+								<div class="input-group changePwd-part">
+									<div class="input-group-addon" style="padding: 15px;"><i class="fa fa-lock"></i></div>
+									<input type="password" class="form-control" id="userNewPwd" placeholder="Input your new password here"/>
+								</div>
+							</div>
+							<!--<div class='checkbox checkbox-slider--b-flat checkbox-slider-warning login-part'>
+								<label>
+									<input type='checkbox' name="isRemberPwdId" id="isRemberPwdId" />
+									<span id='cb-slider-text1' for="isRemberPwdId">记住密码</span>
+								</label>
+							</div>-->
+							<div class="lr-btn">
+								<!--<button type="button" class="btn btn-primary login-part" id="login-btn" onclick="LG.userLogin()">Sign&nbsp;&nbsp;&nbsp;In</button>-->
+								<button type="button" class="btn btn-primary login-part" id="login-btn" onclick="LG.userLogin()">Sign&nbsp;&nbsp;&nbsp;In</button>
+								<button type="button" class="btn btn-primary regis-part" id="register-btn" onclick="LG.userRegister()">Sign&nbsp;&nbsp;&nbsp;Up</button>
+								<!--<button type="button" class="btn btn-primary changePwd-part" id="register-btn" onclick="LG.confirmChange()">修&nbsp;&nbsp;改</button>-->
+								<!--<button type="button" class="btn btn-primary changePwd-part" id="register-btn" onclick="LG.cancelChange()">取&nbsp;&nbsp;消</button>								-->
+							</div>
+						</form>
+					  </div>
+					  <div class="modal-footer">
+					  	<p id="messInfo"></p>
+					  	<p class="login-footer regis-part bothFooter">Already got your own account? Go<a onclick="LG.bottomLogin()">Sign in</a>！</p>
+					  	<p class="register-footer bothFooter">Still no account? Go<a onclick="LG.bottomRegister()">Sign up</a>！</p>
+					  </div>
+					</div>
+				  </div>
+				</div><!-- End Modal -->
+			</div>
+		</div>
+	</div>
+</header><!-- End Header -->
+
+<!-- ============================
+	Intro Section
+============================ -->
+<section class="intro">
+	<div class="main-nav">
+		<nav class="navbar" id="main-navbar">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button> 
+							<a class="navbar-brand" href="#"><img src="images/brand-logo-modify1.png" alt=""></a>
+						</div>
+						<div class="collapse navbar-collapse nopadding" id="navbar-collapse">
+							<ul class="nav navbar-nav main-menu">
+								<li class="active"><a href="index.html">Home</a></li>
+								<li class=""><a href="agri_news.html">Vehicle Information</a></li>
+								<li class=""><a href="bargain.html">Sale</a></li>
+								<!--<li class="ordUser-part"><a href="stall_Infor.html">摊位信息</a></li>-->
+								<!--以前的商品管理-->
+								<li class="ordUser-part"><a href="productOfUser.html">My selling cars</a></li>
+								<!--<li class=""><a href="nutrition_match.html">营养搭配</a></li>-->
+								<!--以下是管理员-->
+								<li class="clearfix admin-part"><a href="#">Information Management</a>
+									<ul class="dropdown-menu dropdown-style">
+										<li><a href="userList.html">Users Management</a></li>
+										<li><a href="productList.html">Cars Management</a></li>
+										<!--<li><a href="bargin-list.html">摊位管理</a></li>-->
+										<li><a href="newsList.html">News Management</a></li>
+									</ul>
+								</li>
+								<li class=""><a href="team.html">About us</a></li>
+								<li class="search admin-part">																											
+											<a href="stall-news.html"><i class="fa fa-bell" id="newsstall"></i></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div> 
+			</div><!-- end conainer -->
+		</nav><!-- end navbar -->
+	</div><!-- Main Menu -->
+	
+	<div class="main-slider">
+		<div id="top-slider" class="carousel slide" data-ride="carousel">
+			<!--轮播指标-->
+			<!--即下面那个三个杠杠-->
+			<ol class="carousel-indicators">
+				<li data-target="#top-slider" data-slide-to="0" class="active"> </li><li data-target="#top-slider" data-slide-to="1"> </li><li data-target="#top-slider" data-slide-to="2"> </li>
+			</ol>
+			<!--轮播项目-->
+			<div class="carousel-inner">
+				<div class="item active">
+					<figure>
+						<img src="images/slider/slider01.jpg" alt="First slide" class="img-responsive">
+						<figcaption>
+							<div class="container">
+								<h1 class="animated bounceInDown">Find The Right Car For You!</h1>
+								<p class="animated fadeInUp"></p>
+							</div>
+						</figcaption>
+					</figure>
+				</div>
+			   <div class="item">
+					<figure>
+						<img src="images/slider/slider02.jpg" alt="First slide" class="img-responsive">
+						<figcaption>
+							<div class="container">
+								<h1 class="animated bounceInDown">Sell Your Car The Easy Way!</h1>
+								<p class="animated fadeInUp"></p>
+							</div>
+						</figcaption>
+					</figure>
+				</div>
+				<div class="item">
+					<figure>
+						<img src="images/slider/slider03.jpg" alt="First slide" class="img-responsive">
+						<figcaption>
+							<div class="container">
+								<h1 class="animated bounceInDown">New Sales Car Everyday!</h1>
+								<p class="animated fadeInUp"></p>
+							</div>
+						</figcaption>
+					</figure>
+				</div>
+				<!--<div class="item">-->
+					<!--<figure>-->
+						<!--<img src="images/slider/slider04.jpg" alt="First slide" class="img-responsive">-->
+						<!--<figcaption>-->
+							<!--<div class="container">-->
+								<!--<h1 class="animated bounceInDown"></h1>-->
+								<!--<p class="animated fadeInUp"></p>-->
+							<!--</div>-->
+						<!--</figcaption>-->
+					<!--</figure>-->
+				<!--</div>-->
+			</div>
+			<!--这下面是左右箭头的那个-->
+			<a class="left carousel-control" href="#top-slider" data-slide="prev"><i class="fa fa-arrow-left"></i></a>
+			<a class="right carousel-control" href="#top-slider" data-slide="next"><i class="fa fa-arrow-right"></i></a>
+		</div>
+	</div><!-- End Main Slider -->
+</section><!-- End Intro -->
+
+<!-- ============================
+		市场简介
+============================ -->
+<section class="why-choose-us">
+	<div class="container">
+		<div class="row">
+		   <div class="col-sm-12 section-header">
+				<h2>Introduction of our platform</h2>
+			</div>
+			<div class="col-sm-12 wcu-left" style="font-size: 16px;">
+				<h3>Here are Some Points</h3>
+				<p>This web application provides a platform for students at UVa to sell their cars and buy their cars.</p>
+				<p>There are different sales cars in our platform everyday.</p>
+			</div>
+		</div>
+	</div>
+</section><!--end of introduction-->
+
+<!-- ============================
+	Call-Action
+============================ -->
+
+<section class="call-to-action">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<h2>If you want to sell your own car, you need to have a account firstly！</h2>
+				<ul class="list-unstyled list-inline btn-group">
+					<li><a class="btn btn-primary" id="haveAccout">I got one account！</a></li>
+					<li><a class="btn btn-default" id="haveNoAccout">I didn't get one account.</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section><!-- End Call-To-Action -->
+
+<!-- ============================
+		why buy here
+============================ -->
+<section class="why-choose-us">
+	<div class="container">
+		<div class="row">
+		   <div class="col-sm-12 section-header">
+				<h2>Why buy or sell with us?</h2>
+			</div>
+			<div class="col-sm-12 wcu-left" style="font-size: 16px;">
+				<h3>Here are Some Points</h3>
+				<p>Buying:</p>
+				<p style="text-indent: 8em;">（1）Our 5-Day Money-Back Guarantee means you can bring it back for a full refund.</p>
+				<p style="text-indent: 8em;">（2）We provide 30-Day Free-Repairment Guarantee means we will take care of your vehicle condition in these days.</p>
+				<p>Selling:</p>
+				<p style="text-indent: 8em;">（1）Guaranteed for seven days at our website. Mull yours over or walk out with payment in hand.</p>
+			</div>
+		</div>
+	</div>
+</section><!-- End 市场资质 -->
+
+<!-- ============================
+	Client Testimonial
+============================ -->
+<section class="testimonial">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<div id="sync1" class="owl-carousel client-feedback">
+					<div class="item">
+						<p>The information of the cars you want to sell will display on the website after being checked by our Administrator. Please wait!</p>
+						<h4>Xinhao Chen & Qusheng Sun</h4>
+						<span>Administrator</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section><!-- End Testimonial -->
+
+<!-- ============================
+		提供的服务
+============================ -->
+<section class="services">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 section-header">
+				<h2>Quick Turn</h2>
+				<!--<p style="font-size: 16px;">在这你还可以了解到最新的农资资讯，也可以查看每天的特价商品，还可以学习健康的营养搭配。不仅仅是农贸商品买卖和管理商品及摊位...</p>-->
+			</div>
+			<div class="services-content">
+				<div class="col-md-4 col-sm-8">
+					<div class="service-box">
+						<p class="icon"><i class="fa fa-desktop"></i></p>
+						<h3>Vehicle Information</h3>
+						<p class="service-split-desc">Information of the cars.</p>
+						<a href="agri_news.html" class="btn btn-primary">Learn More!</a>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-8">
+				   <div class="service-box">
+						<p class="icon"><i class="fa fa-product-hunt"></i></p>
+						<h3>On Sales</h3>
+						<p class="service-split-desc">Updates the cars on sales everyday.</p>
+						<a href="bargain.html" class="btn btn-primary">Learn More!</a>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-8">
+				   <div class="service-box">
+						<p class="icon"><i class="fa fa-coffee"></i></p>
+						<h3>About us</h3>
+						<p class="service-split-desc">Developer for this website.</p>
+						<a href="team.html " class="btn btn-primary">Learn More!</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section><!-- End 提供的服务 -->
+
+<!-- ============================
+	Footer
+============================ -->
+<footer>
+	<div class="footer-bottom">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-8 copyright">
+					<p>Copyright &copy; 2017.CarsAtUVa All rights reserved.</p>
+				</div>
+				<div class="col-xs-4 scrool-to-top">
+					<p><a href="#scrolltop"><i class="fa fa-arrow-up"></i></a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer><!-- End Footer -->
+
+<!-- jQuery Library -->
+<script src="js/jquery-1.12.0.min.js"></script>
+<script src="js/jquery.min.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="js/bootstrap.min.js"></script>
+
+<!-- Sticky JS -->
+<script src="js/jquery.sticky.js"></script>
+
+<!-- MixitUp JS -->
+<script src="js/jquery.mixitup.js"></script>
+
+<!-- Lightbox JS -->
+<script src="js/venobox.js"></script>
+
+<!-- Owl Carousel -->
+<script src="js/owl.carousel.min.js"></script>
+
+<!-- jQuery Counter Up -->
+<script src="js/waypoints.min.js"></script>
+<script src="js/jquery.counterup.min.js"></script>
+
+<!-- WOW JS -->
+<script src="js/wow.min.js"></script>
+
+<!-- Plugins JS -->
+<script src="js/plugins.js"></script>
+
+<!-- Custom JS -->
+<script src="js/custom.js"></script>
+<script src="js/modernizr.custom.js"></script>
+<script src="js/classie.js"></script>
+<script src="js/notificationFx.js"></script>
+<script src="js/public/md5.js"></script>
+<script src="js/public/top.js"></script>
+<script src="js/public/login.js"></script>
+<script src="js/public/index.js"></script>
+</body>
+</html>
+

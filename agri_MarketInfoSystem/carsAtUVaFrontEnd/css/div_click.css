@@ -1,0 +1,116 @@
+#main {
+  width: 1002px;
+  margin: 0 auto;
+  border: 1px solid rgb(230, 230, 230);
+  font-size: 0;
+}
+.col-div {
+  display: inline-block;
+  vertical-align: top;
+}
+.box,
+.box * {
+  -webkit-transition: 0.3s linear;
+  -ms-transition: 0.3s linear;
+  transition: 0.3s linear;
+}
+.box {
+  background: rgb(240, 240, 240);
+  width: 250px;
+  height: 250px;
+  font-family: Arial;
+}
+#main .col-div:nth-child(2n+1) .box:nth-child(2n+1) {
+  background: rgb(233, 233, 233);
+}
+#main .col-div:nth-child(2n+2) .box:nth-child(2n+2) {
+  background: rgb(233, 233, 233);
+}
+.box-content {
+  background: rgb(255, 187, 60);
+  width: 80px;
+  height: 80px;
+  margin: 40px 0 0 80px;
+  border-radius: 80px;
+  overflow: hidden;
+  position: absolute;
+  cursor: pointer;
+}
+.box-text {
+  width: 250px;
+  margin: 180px 0 0 0;
+  opacity: 0;
+  position: absolute;
+  /*font-size: 13px;
+  color: rgb(30, 30, 30);
+  text-align: center;
+  line-height: 20px;*/
+  -webkit-transition: margin 0.3s linear, opacity 0.1s linear;
+  -ms-transition: margin 0.3s linear, opacity 0.1s linear;
+  transition: margin 0.3s linear, opacity 0.1s linear;
+}
+.box-text p{
+	text-indent: 2em;
+	font-size: 13px;
+	text-align: left;
+  line-height: 20px;
+  color: rgb(113, 0, 0);
+}
+.box-icon {
+  /*background: url('http://img27.imageshack.us/img27/3269/iconjs.png');*/
+  background-size: 100%;
+  width: 80px;
+  height: 33px;
+  margin: 72px 0 0 112px;
+  opacity: 1;
+  position: absolute;
+  cursor: pointer;
+  font-size: 16px;
+  color: #fff;
+}
+.box-title {
+  width: 250px;
+  margin: 150px 0 0 0;
+  position: absolute;
+  font-size: 16px;
+  color: rgb(208, 135, 0);
+  text-align: center;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+.box.target {
+  height: 500px;
+}
+.box.target .box-title{
+	color: rgb(255, 255, 255);
+  -webkit-transition: color 0.2s 0.4s linear;
+  -ms-transition: color 0.2s 0.4s linear;
+  transition: color 0.2s 0.4s linear;
+	margin: 10px 0 0 0;
+	-webkit-transition: margin 0.2s 0.4s linear;
+  -ms-transition: margin 0.2s 0.4s linear;
+  transition: margin 0.2s 0.4s linear;
+}
+.box.target .box-content {
+  width: 250px;
+  height: 500px;
+  border-radius: 0;
+  margin: 0;
+}
+.box.target .box-text {
+	opacity: 1;
+  -webkit-transition: opacity 0.2s 0.4s linear;
+  -ms-transition: opacity 0.2s 0.4s linear;
+  transition: opacity 0.2s 0.4s linear;
+  margin: 60px 0 0 0;
+  -webkit-transition: margin 0.2s 0.4s linear;
+  -ms-transition: margin 0.2s 0.4s linear;
+  transition: margin 0.2s 0.4s linear;
+}
+.box.target .box-icon {
+  width: 109px;
+  height: 45px;
+  margin: 69px 0 0 95px;
+  opacity: 0;
+  cursor: pointer;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>跳转中...</title>
+		<link href="css/jumpPage.css" rel="stylesheet" type="text/css" media="all" />
+		<!--<link href="//fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+		<link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>-->
+		<script type="text/javascript">     
+			function countDown(secs,surl){     
+			 	var jumpTo = document.getElementById('jumpTo');
+			 	jumpTo.innerHTML=secs;  
+				 if(--secs>0){     
+				     setTimeout("countDown("+secs+",'"+surl+"')",1000);     
+			    }else{       
+			    	localStorage.clear();
+			     	location.href=surl;     
+		     	}
+			 }     
+		</script> 
+	</head>
+	<body>
+		<!--mian-content-->
+		<h1>Error Page</h1>
+			<div class="main-wthree">
+				<h2 id="h2_authority"></h2>
+				<p><span class="sub-agileinfo" id="jumpTo">6</span>秒后自动跳转到系统首页</p>
+			</div>
+		<!--//mian-content-->
+	</body>
+	
+	<script type="text/javascript">
+	var jumpurl = location.search;//获取url中"?"符后的字串
+    var urlMatr = jumpurl.split("=");   
+    var page = urlMatr[1];
+    if(page == 'newsList' || page == 'userList' || page == 'stall-news' || page == 'productList' || page == 'bargin-list'){
+    	document.getElementById('h2_authority').innerHTML = '抱歉，请先登录管理员账户...';
+    }else if(page == 'productOfUser' || page == 'stall_Infor'){
+    	document.getElementById('h2_authority').innerHTML = '抱歉，请先登录商户账户...';
+    }else if(page == undefined || page == null){
+    	document.getElementById('h2_authority').innerHTML = '正在跳转...';
+    }
+    countDown(3,'./index.html');
+	</script>
+</html>

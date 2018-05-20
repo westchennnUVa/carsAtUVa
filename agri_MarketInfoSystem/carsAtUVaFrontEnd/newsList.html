@@ -1,0 +1,554 @@
+<!doctype html>
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>News Management</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+		<!-- Place favicon.ico in the root directory -->
+		
+		<!-- Boostrap CSS -->
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		
+		<!-- Owl Carousel -->
+		<link rel="stylesheet" href="css/owl.carousel.css">
+		<link rel="stylesheet" href="css/owl.transitions.css">
+		
+		<!-- Animate CSS -->
+		<link rel="stylesheet" href="css/animate.css">
+		
+		<!-- Lightbox CSS -->
+		<link rel="stylesheet" href="css/venobox.css">
+		
+		<!-- Google Web Fonts -->
+		<link href="css/googleapi/Lora.css" rel="stylesheet">
+		<link href="css/googleapi/OpenSans.css" rel="stylesheet">
+		<link href="css/googleapi/Roboto.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/base.css" />
+		<script src="js/prefixfree.min.js" type="text/javascript"></script>
+		
+		<!-- Font Awesome Icon -->
+		<link rel="stylesheet" href="css/font-awesome.min.css" />
+		
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/responsive.css">
+		<link rel="stylesheet" type="text/css" href="css/contectstyle.css"/>
+		<link rel="stylesheet" href="css/btn3.css" />
+		<link rel="stylesheet" type="text/css" href="css/ns-default.css" />
+		<link rel="stylesheet" type="text/css" href="css/ns-style-growl.css" />
+		<link rel="stylesheet" href="css/summernote.css"/>
+		<link rel="stylesheet" href="css/popModal.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/jquery-confirm.min.css"/>
+	
+		<style>
+		body{padding-bottom: 6em !important;}
+		em, i {font-style: normal;}
+    	.top-btn{font-size: 17px;font-weight: bold;padding: 25px 25px 16px !important;}
+		.dropdown-style{min-width: auto !important;}
+		.list-inline li{font-size: 15px;}
+		header{padding: 12px 0 !important;}
+		.header-top-contact{text-align: left !important; }
+		.intro .main-nav ul.main-menu li ul.dropdown-menu{background: rgba(34, 42, 66, 0.8) none repeat scroll 0 0 !important;}
+		.pager li {display: inline-block;line-height: 25px;}
+		.pager a {
+			display: block;
+			color: #00FFFF;
+			text-shadow: 1px 0 0 #101011;
+			padding: 0 10px;
+			border-radius: 2px;
+			box-shadow: 0 1px 0 #5a5b5c inset,0 1px 0 #080808;
+			background: -*-linear-gradient(top,#520b53,#2f3032);
+		}
+		.pager a:hover {text-decoration: none;box-shadow: 0 1px 0 #f9bd71 inset,0 1px 0 #0a0a0a;background: -*-linear-gradient(top,#f48b03,#c87100);}
+		.pager li:target a {
+			box-shadow: 1px 0 5px #1a1a1b inset,1px 0 0 #2d2d2d,0 1px 0 #2d2d2d;
+			background: -*-linear-gradient(top,#252627,#1c1c1e);
+			background-image: -moz-linear-gradient(top,bottom, #252627, #1c1c1e); 
+			background-image: -webkit-gradient(linear,top, left bottom, color-stop(0, #252627), color-stop(1, #1c1c1e));
+		}
+	    body{background-color: #000000;}
+		/*登录框样式*/
+		.top-userName{color: #FF8724 !important;outline: 0;cursor: pointer;font-size: 17px;font-weight: bold;padding: 25px 10px 25px 0 !important;}
+		.top-userName:hover{text-decoration: none;}
+		form .form-group label{display: inline-block;}
+		form .form-group input{width: 400px;display: inline-block;}
+		form .form-group .input-group :focus{
+			-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 10px rgb(31, 166, 218) !important;
+			box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 10px rgb(31, 166, 218) !important;
+			border: 1px solid rgb(31, 166, 218) !important;}
+		.input-group-addon{background-color: rgba(255, 141, 0, 0.72);color: #fff;}
+		form .checkbox{float: right;margin-top: 0px !important;}
+		.checkbox-slider--b-flat input + span {padding-left: 30px;}
+		.lr-btn{text-align:right;}
+		.lr-btn button{width: 100%;}
+		#login-btn, #register-btn{font-weight: bold;}
+		.modal-footer p{margin: 0;}
+		.modal-footer p a{text-decoration: underline;cursor: pointer;color: rgb(255, 135, 36);}
+		.modal-body{padding: 45px 65px 15px 60px !important;}
+		.modal-header{box-shadow: 0px 3px 8px rgb(146, 148, 0);}
+		.modal-body .form-control{font-size: 16px;}
+		.changePwd-part{width:auto !important;}
+		.login-footer, .register-footer{display: inline-block;float: right;}
+		#messInfo{display: inline-block;float: left;color: red;font-weight: bold;}
+		/*登录框样式*/
+		.user_list{
+			background-image: -moz-linear-gradient(left top, #000000, #BEBEBE); /* Firefox */
+			background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #000000), color-stop(1, #BEBEBE)); /* Saf4+, Chrome */
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#', GradientType='0'); /* IE*/
+			width: 100%;height: 800px;margin-top: 130px;
+			text-align:center;}
+		.top-title{font-size: 25px;color: burlywood;}
+		thead{font-size: 25px;color: #1B6D85;}
+		tbody{font-size: 15px;color: #00FFFF;}
+		tr{height: 50px;text-align: center;}
+		th{line-height:50px;text-align: center;}
+		.events-top{margin-left: -12em;margin-top: 5em;}
+		.event-text a:hover{text-decoration: none;outline: 0;}
+		.event-text a{padding: 0.65em 1em !important;}
+		.events .events-main .event-user{color: #9a9a9a !important;}
+		.time-month{margin-top:1.5em;font-size: 1.2em;}
+		.time-hour{font-size: 1.2em;}
+		#news_context{font-size: 1.1em;width: auto;height: 5em;overflow: hidden;text-overflow: ellipsis;}
+		.idtnty{margin-top: 7em;}
+		/* 分页数字链接样式 */
+		.pagebox{padding:50px 30px 30px 30px;}
+		.paging a,.paging span.Bg,.paging a:hover,.paging a.cur,.paging a:hover span.Bg,.paging a.cur span.Bg{background:url(images/pagebg.png) no-repeat;}
+		.paging{text-align:center;font-size:px;}
+		.paging a{padding-bottom:4px;display:inline-block;background-position:0 -134px;padding-bottom:11px;}
+		.paging a:hover{text-decoration:none;}
+		.paging b{font-weight:100;opacity:0;*visibility:hidden;}
+		.paging span.Bg{
+			width:58px;height:17px;line-height:17px;padding-left:5px;text-align:left;margin-right:1px;display:inline-block;background-position:0px 11px;cursor:pointer;
+			-moz-transition:all 0.3s ease;
+			-webkit-transition:all 0.3s ease;
+			-o-transition:all 0.3s ease;
+		}
+		.paging a:link,.paging a:visited{color:#266EB0;}
+		.paging a:hover,.paging a.cur{color:#fff;background-position:0px -93px;}
+		.paging a:hover span.Bg,.paging a.cur span.Bg{background-position:0px -63px;}
+		.paging a:hover span.Bg b,.paging a.cur span.Bg b{opacity:1;*visibility:visible;}
+		/* 上下翻页样式 */
+		.paging a.previous,.paging a.previous span.Bg,.paging a.previous b,.paging a.previous:hover,.paging a.previous:hover span.Bg,.paging a.previous:hover b,.paging a.nextpage,.paging a.nextpage span.Bg,.paging a.nextpage b,.paging a.nextpage:hover,.paging a.nextpage:hover span.Bg,.paging a.nextpage:hover b{background:url(images/prev-next-bg.png) no-repeat}
+		.paging a.previous{background-position:0px -72px;}
+		.paging a.previous span.Bg{width:61px;padding-left:0px;background-position:0px -121px;}
+		.paging a.previous b{background-position:0px 17px;}
+		.paging a.previous:hover{background-position:0px -25px;}
+		.paging a.previous:hover span.Bg{background-position:0px -108px;}
+		.paging a.previous:hover b{background-position:0px 4px;opacity:1;*visibility:visible;}
+		.paging a.nextpage{background-position:-61px -72px;}
+		.paging a.nextpage span.Bg{width:61px;padding-left:0px;background-position:-61px -121px;}
+		.paging a.nextpage b{background-position:-61px 17px;}
+		.paging a.nextpage:hover{background-position:-61px -25px;}
+		.paging a.nextpage:hover span.Bg{background-position:-61px -108px;}
+		.paging a.nextpage:hover b{background-position:-61px 4px;opacity:1;*visibility:visible;}
+		.paging a.previous b,.paging a.nextpage b{
+			width:61px;display:inline-block;height:17px;opacity:1;*visibility:visible;
+			-moz-transition:all 0.6s ease;
+			-webkit-transition:all 0.6s ease;
+			-o-transition:all 0.6s ease;
+		}
+		/*jDate样式*/
+		#jedatebox .jedatebot .jedatebtn span:hover{background: #777 !important;color: #fff !important;cursor: pointer;}
+		#jedatebox .jedaym li:hover, #jedatebox .jedaul li:hover, #jedatebox .jedatetopym .ymdropul li:hover{background: #bbb !important;cursor: pointer;}
+		/*jDate样式*/
+		.ns-box{width: 200px;text-align: center;left: 45% !important;z-index: 1500;}
+		.ns-box p{font-size: 16px !important;color: #fff !important;}
+		.pager{margin: 5em 0 !important;}
+		.pager li span.pagSpan{color: #00FFFF;background: -webkit-linear-gradient(top,#520b53,#2f3032);}
+		.pager li span.pagSpan input{color:#ef0000;text-align: center;width: 2.6em;}
+		#section_edit{margin: 8em 0 0 0;}
+		#section_edit .section_head{padding-bottom: 2em;}
+		#section_edit .div_border{border: 2px solid #b95e00;border-radius: 10%;margin-left: 2em;margin-right: 2em;}
+		#section_edit .section_head #title_content h2{color: #f2af00 !important;font-size: 2.45em !important;}
+		#section_edit .div_border .container-fluid .row .line .form-group .label-control{color: #a2b040;font-size: 1.4em;line-height: 1.7em;}
+		#section_edit .div_border .container-fluid{padding-top: 2.4em;}
+		#section_edit .div_border .container-fluid .row .line .form-group{margin-bottom: 3.45em !important;}
+		#section_edit .div_border .container-fluid .row .line .form-group .input_control input{background: #666 !important;color: #fff;}
+		#section_edit .div_border .container-fluid .row .line .form-group .input_control input:focus{
+			-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgb(255,255,255);
+			box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgb(255,255,255);
+		}
+		#section_edit .div_border .section_foot{border-top: 2px solid;}
+		#section_edit .div_border .section_foot .row .line{bottom: 18px;text-align: right;padding-right: 12em;}
+		#section_edit .div_border .section_foot .row .line button{font-weight: bold;font-size: 1.23em;}
+		.div_border{-webkit-animation:fadeInUp 1s .2s ease both;-moz-animation:fadeInUp 1s .2s ease both;}
+		@-webkit-keyframes fadeInUp{
+		0%{opacity:0;
+		-webkit-transform:translateY(20px)}
+		100%{opacity:1;
+		-webkit-transform:translateY(0)}
+		}
+		@-moz-keyframes fadeInUp{
+		0%{opacity:0;
+		-moz-transform:translateY(20px)}
+		100%{opacity:1;
+		-moz-transform:translateY(0)}
+		}
+		.note-editor{margin-top: 1em;}
+		.note-editor .note-editing-area .note-editable p{color: #555 !important;}
+		.note-editor .note-editing-area .note-editable{background: #e8e8e8 !important;text-align: left;color: #555 !important;}
+		.jconfirm-box{/*background: #c8fff4 !important;*/padding: 15px 0px 0 !important;border-radius: 8px !important;margin-top: 100px !important;}
+	  	.jconfirm-box > .buttons > .btn-success{width: 120px;}
+	  	.jconfirm.jconfirm-white .jconfirm-box .buttons button{border-radius: 7px;border: 1px solid #ccc;font-weight: 100 !important;}
+	  	.jconfirm.jconfirm-white .jconfirm-box .buttons{border-top: 1px solid #e5e5e5;width: 100%;margin-top: 2em;padding: .6em .7em !important;text-align: right}
+	  	.jconfirm.jconfirm-white .jconfirm-box .title-c{border-bottom: 1px solid #e5e5e5;}
+	  	.jconfirm .jconfirm-box div.title-c {font-size: 18px;padding-left: 10px;}
+	  	.jconfirm .jconfirm-box div.title-c .icon-c{padding-bottom: 11px !important;}
+	  	.jconfirm .jconfirm-box div.title-c .title{padding-bottom: 11px !important;}
+	  	.jconfirm .jconfirm-box div.content-pane{margin-bottom: .4em;}
+	  	.jconfirm .jconfirm-box div.content-pane .content{margin-top: .44em;padding: 0 11px;word-break: break-all;text-align: center;}
+
+		</style>
+	
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<![endif]-->
+	</head>
+<body>
+	<!-- Preloader -->
+	<!--<div id="preloader">
+		<div id="status">&nbsp;</div>
+	</div>-->
+	<!-- ============================
+	Header Section
+============================ -->
+	<header>
+		<div class="container">
+            <div class="row">
+                <div class="col-sm-8 header-top-contact">
+                    <ul class="list-unstyled list-inline" style="visibility: hidden;">
+						<li>Contact us:</li>
+						<li><i class="fa fa-envelope"></i>xc2vb@virginia.edu</li>
+						<li><i class="fa fa-envelope"></i>qs2ea@virginia.edu</li>
+                    </ul>
+                </div>
+				<div class="col-sm-4 header-top-social">
+					<ul class="list-unstyled list-inline">
+						<li class="top-consult-btn"><a href="" data-toggle="modal" data-target="#myModal" class="top-btn" onclick="LG.topLogin()"><i class="fa fa-user"></i>Sign in</a></li>
+						<li class="top-consult-btn"><a href="" data-toggle="modal" data-target="#myModal" class="top-btn" onclick="LG.topRegister()"><i class="fa fa-user-plus"></i>Sign up</a></li>
+						<li class="top-userInfor" style="display: none;color: #FFFFFF;position: relative;">
+							Welcome back！<a class="top-userName" id="top-userName"></a>
+							<ul class="dropdown-menu dropdown-style" style="left: 70px;top: 34px;">
+								<li><a onclick="LG.changePwd()">Password Reset</a></li>
+								<li><a onclick="LG.logoutAccount()">Sign out</a></li>
+							</ul>
+						</li>
+					</ul>
+					<!-- Modal -->
+					<div id="myModal" class="modal fade" role="dialog">
+					  <div class="modal-dialog">
+						<!-- Modal content-->
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title login-header">Sign in</h4>
+								<h4 class="modal-title register-header">Sign up</h4>
+								<h4 class="modal-title changePwd-part">Password Reset</h4>
+							</div>
+						  <div class="modal-body">
+							<form id="loginForm">
+								<div class="form-group">
+									<div class="input-group login-part">
+										<div class="input-group-addon"><i class="fa fa-user-circle"></i></div>
+										<input type="text" class="form-control" id="userAccount" placeholder="Input username here" />
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="input-group login-part">
+										<div class="input-group-addon" style="padding: 15px;"><i class="fa fa-lock"></i></div>
+										<input type="password" class="form-control" id="userPwd" placeholder="Input password here"/>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="input-group regis-part">
+										<div class="input-group-addon"><i class="fa fa-user-o"></i></div>
+										<input type="text" class="form-control" id="userName" placeholder="Input name here" />
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="input-group regis-part">
+										<div class="input-group-addon" style="padding: 10px;"><i class="fa fa-id-card"></i></div>
+										<input type="text" class="form-control" id="userIdentification" placeholder="Input your ID here" />
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="input-group regis-part">
+										<div class="input-group-addon"><i class="fa fa-phone"></i></div>
+										<input type="text" class="form-control" id="userPhone" placeholder="Input your telephone number" />
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="input-group changePwd-part">
+										<div class="input-group-addon" style="padding: 15px;"><i class="fa fa-lock"></i></div>
+										<input type="password" class="form-control" id="userOldPwd" placeholder="Input your orginal password here"/>
+									</div>
+								</div><div class="form-group">
+								<div class="input-group changePwd-part">
+									<div class="input-group-addon" style="padding: 15px;"><i class="fa fa-lock"></i></div>
+									<input type="password" class="form-control" id="userNewPwd" placeholder="Input your new password here"/>
+								</div>
+							</div>
+								<!--<div class='checkbox checkbox-slider--b-flat checkbox-slider-warning login-part'>
+									<label>
+										<input type='checkbox' name="isRemberPwdId" id="isRemberPwdId" />
+										<span id='cb-slider-text1' for="isRemberPwdId">记住密码</span>
+									</label>
+								</div>-->
+								<div class="lr-btn">
+									<button type="button" class="btn btn-primary login-part" id="login-btn" onclick="LG.userLogin()">Sign&nbsp;&nbsp;&nbsp;In</button>
+									<button type="button" class="btn btn-primary regis-part" id="register-btn" onclick="LG.userRegister()">Sign&nbsp;&nbsp;&nbsp;Up</button>
+									<button type="button" class="btn btn-primary changePwd-part" id="register-btn" onclick="LG.confirmChange()">Reset</button>
+									<button type="button" class="btn btn-primary changePwd-part" id="register-btn" onclick="LG.cancelChange()">Cancel</button>
+								</div>
+							</form>
+						  </div>
+							<div class="modal-footer">
+								<p id="messInfo"></p>
+								<p class="login-footer regis-part bothFooter">Already got your own account? Go<a onclick="LG.bottomLogin()">Sign in</a>！</p>
+								<p class="register-footer bothFooter">Still no account? Go<a onclick="LG.bottomRegister()">Sign up</a>！</p>
+							</div>
+						</div>
+					  </div>
+					</div><!-- End Modal -->
+				</div>
+            </div>
+        </div>
+	</header>
+	<!-- End Header -->
+
+	<!-- ============================
+	Intro Section
+============================ -->
+	<section class="intro">
+		<div class="main-nav">
+			<nav class="navbar" id="main-navbar">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="navbar-header">
+								<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+								</button>
+                                <a class="navbar-brand" href="index.html"><img src="images/brand-logo-modify1.png" alt=""></a>
+							</div>
+							<div class="collapse navbar-collapse nopadding" id="navbar-collapse">
+								<ul class="nav navbar-nav main-menu">
+									<li class=""><a href="index.html">Home</a></li>
+									<li class=""><a href="agri_news.html">Vehicle Information</a></li>
+									<li class=""><a href="bargain.html">Sale</a></li>
+									<!--<li class="ordUser-part"><a href="stall_Infor.html">摊位信息</a></li>-->
+									<li class="ordUser-part"><a href="productOfUser.html">My selling cars</a></li>
+									<!--<li class=""><a href="nutrition_match.html">营养搭配</a></li>-->
+									<li class="clearfix admin-part active"><a href="#">Information Management</a>
+										<ul class="dropdown-menu dropdown-style">
+											<li><a href="userList.html">Users Management</a></li>
+											<li><a href="productList.html">Cars Management</a></li>
+											<!--<li><a href="bargin-list.html">摊位管理</a></li>-->
+											<li><a href="newsList.html">News Management</a></li>
+										</ul>
+									</li>
+									<li class=""><a href="team.html">About us</a></li>
+									<li class="search admin-part">																											
+										<a href="stall-news.html"><i class="fa fa-bell" id="newsstall"></i></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- end conainer -->
+			</nav>
+			<!-- end navbar -->
+		</div>
+		<!-- Main Menu -->
+	</section>
+	
+	<section id="section_list">
+		<div class="container">
+			<div class="idtnty row">
+				<div class="col-md-5 container">
+					<div class="col-md-4 center" style="padding: 0.25em;background-color: #018F90;font-size: 1.5em;color: #eee;">Start date</div>
+					<div class="col-md-8">
+						<p class="datep"><input class="datainp form-control" id="datestart" type="text" placeholder="Choose start time" readonly onclick=""></p>
+					</div>
+				</div>
+				<div class="col-md-5">
+					<div class="col-md-4 center circle" style="padding: 0.25em;background-color: #018F90;font-size: 1.5em;color: #eee;">End date</div>
+					<div class="col-md-8">
+						<p class="datep"><input class="datainp form-control text-box" id="datefinish" type="text" placeholder="Choose end time" readonly onclick=""></p>
+					</div>
+				</div>
+				<div class="col-md-2" style="">
+					<button type="button" class="btn btn-warning btn-circle" style="font-size: 1em;" onclick="newsMgr.searchByDate()"><i class="fa fa-search"></i></button>
+				</div>
+			</div>
+		</div>
+	
+		<div>
+			<div class="events">
+				<div class="events-list-part">
+					<div class="events-main">
+						<div id="new-info">
+							
+						</div>
+						<div class="col-md-3 addbtn" style="width: 100% !important;float: right;">
+							<div class="center">
+								<a class="spinningeffect" onclick="newsMgr.createNews()">
+									<img src="images/add.png" style="width: 10em;">
+								</a>
+							</div>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+				<!-- 分页开始 -->
+				<section class="col-md-12 container">
+					<ul class="pager">
+						<li id="first"><a href="#first" onclick="goPage('first');">&laquo; First</a></li>
+						<li id="page_up"><a href="#page_up" onclick="goPage('up');">&laquo;</a></li>
+						
+						<!--<li id="one"><a href="#one">1</a></li>
+						<li id="two"><a href="#two">2</a></li>
+						<li id="three"><a href="#three">3</a></li>
+						<li id="four"><a href="#four">4</a></li>
+						<li id="five"><a href="#five">5</a></li>
+						<li id="six"><a href="#six">6</a></li>
+						<li id="seven"><a href="#seven">7</a></li>-->
+						
+						<li id="">
+							<span class="pagSpan" style="line-height: 21px;min-height: 34px;vertical-align: middle;" id="pageMsg"></span>
+							<span class="pagSpan">to:<input type="text" id="toPage" onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')" class="pageipt" value="" /></span>
+							<a id="btn-go" href="javaScript:void(0);" onclick="goPage('page')" data-balloon="Jump" data-balloon-pos="down">GO</a>
+						</li>
+						
+						<li id="next_page"><a href="#next_page" onclick="goPage('down');">&raquo;</a></li>
+						<li id="last"><a href="#last" onclick="goPage('last');">Last &raquo;</a></li>
+					</ul>
+				</section>
+				<!-- 分页结束 -->
+			</div>
+		</div>
+	</section>
+	
+	<section id="section_edit" style="display: none;">
+		<div class="section_head">
+			<div id="title_content">
+				<h2 class="title" id="title_edit">Edit news</h2>
+				<h2 class="title" id="title_create">Create News</h2>
+				<input type="hidden" id="section_status" />
+				<input type="hidden" id="newsid" />
+			</div>														
+		</div>		
+		<div class="div_border">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 line">
+					   	<div class="form-group col-md-12 col-xs-12 col-sm-12 col-lg-12">
+					      	<label class="col-sm-4 col-md-4 col-lg-4 col-xs-4 col-lg-push-2 col-md-push-2 label-control">News Title:</label>
+					      	<div class="col-md-5 col-lg-5 col-xs-5 col-sm-5 col-lg-push-1 col-md-push-1 input_control">
+					         	<input type="text" class="form-control " id="newsTitle" name="News Title" onkeydown="checkMaxInput(this,this.name,24)" onkeyup="checkMaxInput(this,this.name,24)"
+					         		onfocus="checkMaxInput(this,this.name,24)" onblur="checkMaxInput(this,this.name,24)"  placeholder="Input News Title here"/>
+					      	</div>															
+					   </div>
+					   <div class="form-group col-md-6 col-xs-6 col-sm-6 col-lg-6">
+					   		<input type="hidden" id="advID" />
+					   		<input type="hidden" id="isEnable" />
+					      	<label class="col-sm-4 col-md-4 col-lg-4 col-xs-4 col-lg-push-1 col-md-push-1 label-control">News Time:</label>
+					      	<div class="col-md-6 col-lg-6 col-xs-6 col-sm-6 input_control">
+					         	<input type="text" class="form-control " id="newsTime" name=""  placeholder="Choose News Time here" readonly="readonly"/>
+					      	</div>															
+					   </div>
+					   <div class="form-group col-md-6 col-xs-6 col-sm-6 col-lg-6">
+					   		<input type="hidden" id="advID" />
+					   		<input type="hidden" id="isEnable" />
+					      	<label class="col-sm-4 col-md-4 col-lg-4 col-xs-4 col-lg-push-1 col-md-push-1 label-control">Editor:</label>
+					      	<div class="col-md-6 col-lg-6 col-xs-6 col-sm-6 input_control">
+					         	<input type="text" class="form-control " id="newsEditor" name="" readonly="readonly"/>
+					      	</div>															
+					   </div>
+					</div>																		
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 line">
+					   <div class="form-group col-md-12 col-xs-12 col-sm-12 col-lg-12">																		      
+					     <label class="col-md-12 col-xs-12 col-sm-12 col-lg-12 label-control">News Content</label>
+					     <div class="col-md-1 col-xs-1 col-sm-1 col-lg-1"></div>
+					      <div class="col-md-10 col-xs-10 col-sm-10 col-lg-10">
+					      	<div class="editor">
+					      		<div id="summernote">Input News Content...</div>
+					      	</div>
+					      </div>									                                          											
+					   </div>																		   
+					</div>																		
+				</div>
+			</div>
+			<div class="container-fluid section_foot">
+				<div class="row">
+					<div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 line">
+						<button type="button" class="btn btn-success confirm_save" >Save</button>&nbsp;
+						<button type="button" id="btn_cancelEdit" class="btn btn-default" >Cancel</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+		<!-- jQuery Library -->
+		<script src="js/jquery-1.12.0.min.js"></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+
+		<!-- Bootstrap JS -->
+		<script src="js/bootstrap.min.js"></script>
+
+		<!-- Sticky JS -->
+		<script src="js/jquery.sticky.js"></script>
+
+		<!-- MixitUp JS -->
+		<script src="js/jquery.mixitup.js"></script>
+
+		<!-- Lightbox JS -->
+		<script src="js/venobox.js"></script>
+
+		<!-- Owl Carousel -->
+		<script src="js/owl.carousel.min.js"></script>
+
+		<!-- jQuery Counter Up -->
+		<script src="js/waypoints.min.js"></script>
+		<script src="js/jquery.counterup.min.js"></script>
+
+		<!-- WOW JS -->
+		<script src="js/wow.min.js"></script>
+
+		<!-- Plugins JS -->
+		<script src="js/plugins.js"></script>
+
+		<!-- Custom JS -->
+		<script src="js/custom.js"></script>
+		<script src="js/modernizr.custom.js"></script>	
+		<script src="js/classie.js"></script>	
+		<script src="js/notificationFx.js"></script>
+		<script type="text/javascript" src="jedate/jedate.js"></script>
+		<script type="text/javascript" src="js/jPaginator-min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui-1.8.13.slider.min.js"></script>
+		<script src="js/public/md5.js"></script>
+		<script src="js/public/top.js"></script>
+		<script src="js/public/login.js"></script>
+		<script src="js/manager/jquery-confirm.min.js"></script>
+		<script src="js/popModal.min.js"></script>
+		<!--  富文本编辑  -->
+		<script src="js/manager/summernote.js"></script>		
+		<script src="js/manager/summernote-ini.js"></script>
+		<script src="js/manager/summernote-zh-CN.js"></script>
+		<script type="text/javascript" src="js/manager/newList.js"></script>
+</body>
+	
+</html>

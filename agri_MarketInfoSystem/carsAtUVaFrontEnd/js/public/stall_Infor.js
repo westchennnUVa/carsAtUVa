@@ -1,0 +1,174 @@
+/*
+ * 摊位信息
+ */
+$(function(){
+	Config.userJudge();
+	var pathMatr = (window.location.pathname.split('/'))[2].split('.');
+	Config.PageJudge(pathMatr[0]);
+	stallinfo.loadData();
+});
+var stall = "东区";
+var eman = 3;
+function show_three(){
+	$("#min_identity").html("南区摊位使用情况");
+	stall = "南区";
+	stallinfo.loadData();
+}
+function show_two(){
+	$("#min_identity").html("西区摊位使用情况");
+	stall = "西区";
+	stallinfo.loadData();
+}
+function show_one(){
+	$("#min_identity").html("东区摊位使用情况");
+	stall = "东区";
+	stallinfo.loadData();
+}
+
+function showBarginUser(barginNum){
+	$("#stallCode_Edit").val(barginNum);
+	console.log(1);
+}
+function show(em){
+	eman = em;
+	stallinfo.loadtData();
+}
+var strhtml;
+function addhtml(obj){
+	            if(obj.stallisused == "0"){
+	            	if(obj.examination == 1)
+	            	{strhtml +="<a class='col-md-3 team-gd' value='0' onclick='stallinfo.shenqing(" + obj.stallid +")'>";											
+					strhtml +="<h4>"+obj.stallcode+"</h4></a>";}
+	            	else{
+	            		strhtml +="<a class='col-md-3 team-gd bargin-waring' value='0' onclick='stallinfo.warshen(" + obj.stallid +")'>";											
+						strhtml +="<h4>"+obj.stallcode+"</h4></a>";
+	            	}
+				}
+				if(obj.stallisused == "1"){
+					strhtml +="<a class='col-md-3 team-gd bargin-active' value='1' href='' data-toggle='modal' data-target='#small-dialog' onclick='stallinfo.loadoneuseData(" + obj.stallid +")'>";											
+					strhtml +="<h4>"+obj.stallcode+"</h4></button>";					
+				}				
+}
+var stallinfo = {
+	loadData:function(){
+		ajaxurl = Config.hostIp+"/AgricultureStallRequest?jsoncallback=?";
+		$.getJSON(ajaxurl,function(data){
+			strhtml ="";
+			$("#bargin-con").html("");
+			var list = data.data;
+			for(var i = 0;i < list.length;i++){
+				var obj = list[i];
+				if(obj.stallcode.indexOf(stall) != -1)
+
+				{
+					addhtml(obj);		
+				}
+			}						
+//			console.log(strhtml);
+			$("#bargin-con").html(strhtml);		
+		})
+	},
+	loadtData:function(){
+		ajaxurl = Config.hostIp+"/AgricultureStallRequest?jsoncallback=?";
+		$.getJSON(ajaxurl,function(data){
+			strhtml ="";
+			console.log(2);
+			$("#bargin-con").html("");
+			var list = data.data;
+			for(var i = 0;i < list.length;i++){
+				var obj = list[i];
+				if(obj.stallcode.indexOf(stall) != -1)
+
+				{
+					if(eman == 3){addhtml(obj);}
+					if(eman == 0){
+						 if(obj.stallisused == "0"){
+			            	if(obj.examination == 1)
+			            	{
+			            		strhtml +="<a class='col-md-3 team-gd' value='0' >";											
+								strhtml +="<h4>"+obj.stallcode+"</h4></a>";
+			            	}
+						}
+					}
+					if(eman == 1){
+						if(obj.stallisused == "1"){
+							strhtml +="<a class='col-md-3 team-gd bargin-active' value='1' href='' data-toggle='modal' data-target='#small-dialog1' onclick='showBarginUser(" + obj.stallid +")'>";											
+							strhtml +="<h4>"+obj.stallcode+"</h4></button>";					
+						}	
+					}
+					if(eman == 2){
+						 if(obj.stallisused == "0"){
+			            	if(obj.examination == 0)
+			            	{
+			            		strhtml +="<a class='col-md-3 team-gd bargin-waring' value='0' href='' data-toggle='modal' data-target='#small-dialog' onclick='stallinfo.loadoneshenData(" + obj.stallid +")' >";											
+								strhtml +="<h4>"+obj.stallcode+"</h4></a>";
+			            	}
+						}
+					}
+				}
+			}
+//			console.log(strhtml);
+			$("#bargin-con").html(strhtml);		
+		})
+	},
+	loadoneuseData:function(stallid){
+		ajaxurl = Config.hostIp+"/AgricultureStallRequest?jsoncallback=?";
+		$.getJSON(ajaxurl,function(data){		
+			var list = data.data;
+			for(var i = 0;i < list.length;i++){
+				var obj = list[i];
+				if(obj.stallid == stallid)
+				{					
+					$("#embargin-code").html(obj.stallcode);					
+					$("#bargin-usename").html(obj.username);
+					$("#bargin-Id").html(stallid);
+					$("#bargin-code").html(obj.stallcode);
+					$("#bargin-userId").html(obj.userid);
+					$("#bargin-name").html(obj.username);
+					$("#bargin-phone").html(obj.userphone);
+					break;
+				}
+			}
+		})
+	},
+	warshen:function(stallid){
+		alert("摊位"+stallid+"已被申请");
+		console.log(1);
+	},
+	shenqing:function(stallid){  
+		  var r=confirm("是否确认申请摊位"+stallid+"的使用权")
+		  if (r==true)
+		    {
+		    	var userID = getUserid;
+		    	ajaxurl = Config.hostIp+"/AgricultureUserRequestStall?stallid="+stallid+"&userid="+userID+"&jsoncallback=?";
+				$.getJSON(ajaxurl,function(data){
+					stallinfo.loadData();
+				})
+		    }
+		  else
+		    {
+		    
+		    }
+	},
+	
+}
+function loadData(){
+	$.ajax({
+		type:"get",
+		url:"bargin-list.json",
+		dataType:"json",
+		success:function(resultdata){
+			var strhtml ="";
+			console.log(2);
+			$("#bargin-con").html("");
+			$.each(resultdata,function(i,item){
+			})
+			console.log(strhtml);
+			$("#bargin-con").html(strhtml);			
+		},
+		 error: function(err) {
+				console.log(err);
+			}
+	})
+}
+

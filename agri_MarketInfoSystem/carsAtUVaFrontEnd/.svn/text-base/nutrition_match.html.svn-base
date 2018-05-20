@@ -1,0 +1,470 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>营养搭配</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+        <!-- Place favicon.ico in the root directory -->
+        
+        <!-- Boostrap CSS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        
+        <!-- Owl Carousel -->
+        <link rel="stylesheet" href="css/owl.carousel.css">
+        <link rel="stylesheet" href="css/owl.transitions.css">
+        
+        <!-- Animate CSS -->
+        <link rel="stylesheet" href="css/animate.css">
+        
+        <!-- Google Web Fonts -->
+        <link href="css/googleapi/Lora.css" rel="stylesheet">
+		<link href="css/googleapi/OpenSans.css" rel="stylesheet">
+		<link href="css/googleapi/Roboto.css" rel="stylesheet">
+
+        
+		<!-- Font Awesome Icon -->
+		<link rel="stylesheet" href="css/font-awesome.min.css" />
+		
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+		<link rel="stylesheet" href="css/titatoggle-dist.css" />  
+		<link rel="stylesheet" href="css/balloon.css" />  
+		<link rel="stylesheet" type="text/css" href="css/ns-default.css" />
+		<link rel="stylesheet" type="text/css" href="css/ns-style-growl.css" />
+		<link rel="stylesheet" href="css/div_click.css">
+		
+        <style>
+        	.breadcrumb>.active {color: #ddd !important;}
+        	em, i {font-style: normal;color: #fff;}
+			.top-btn{font-size: 17px;font-weight: bold;padding: 25px !important;}
+			.dropdown-style{min-width: auto !important;}
+			.list-inline li{font-size: 15px;}
+			/*登录框样式*/
+			.top-userName{color: #FF8724 !important;outline: 0;cursor: pointer;font-size: 17px;font-weight: bold;padding: 25px 10px 25px 0 !important;}
+			.top-userName:hover{text-decoration: none;}
+			form .form-group label{display: inline-block;}
+			form .form-group input{width: 400px;display: inline-block;}
+			form .form-group .input-group :focus{
+				-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 10px rgb(31, 166, 218) !important;
+				box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 10px rgb(31, 166, 218) !important;
+				border: 1px solid rgb(31, 166, 218) !important;}
+			.input-group-addon{background-color: rgba(255, 141, 0, 0.72);color: #fff;}
+			form .checkbox{float: right;margin-top: 0px !important;}
+			.checkbox-slider--b-flat input + span {padding-left: 30px;}
+			.lr-btn{text-align:right;}
+			.lr-btn button{width: 100%;}
+			#login-btn, #register-btn{font-weight: bold;}
+			.modal-footer p{margin: 0;}
+			.modal-footer p a{text-decoration: underline;cursor: pointer;color: rgb(255, 135, 36);}
+			.modal-body{padding: 45px 65px 15px 60px !important;}
+			.modal-header{box-shadow: 0px 3px 8px rgb(146, 148, 0);}
+			.modal-body .form-control{font-size: 16px;}
+			.changePwd-part{width:auto !important;}
+			.login-footer, .register-footer{display: inline-block;float: right;}
+			#messInfo{display: inline-block;float: left;color: red;font-weight: bold;}
+			/*登录框样式*/
+			
+    		.btn-animate{transition: .4s ease;}
+    		.ns-box{width: 200px;text-align: center;left: 45% !important;z-index: 1500;}
+    		.ns-box p{font-size: 16px !important;color: #fff !important;}
+		</style>
+        
+    </head>
+    <body>
+    <!-- ===========================
+        Header Section
+    =========================== -->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 header-top-contact">
+                    <ul class="list-unstyled list-inline">
+                    	<li>联系管理员:</li>
+                        <li><i class="fa fa-mobile"></i>13368347746</li>
+						<li><i class="fa fa-envelope"></i>theoga85@gmail.com</li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 header-top-social">
+					<ul class="list-unstyled list-inline">
+						<li class="top-consult-btn"><a href="" data-toggle="modal" data-target="#myModal" class="top-btn" onclick="LG.topLogin()"><i class="fa fa-user"></i>登录</a></li>
+						<li class="top-consult-btn"><a href="" data-toggle="modal" data-target="#myModal" class="top-btn" onclick="LG.topRegister()"><i class="fa fa-user-plus"></i>注册</a></li>
+						<li class="top-userInfor" style="display: none;color: #FFFFFF;position: relative;">
+							欢迎回来！<a class="top-userName" id="top-userName"></a> 
+							<ul class="dropdown-menu dropdown-style" style="left: 70px;top: 34px;">
+								<li><a onclick="LG.changePwd()">修改密码</a></li>
+								<li><a onclick="LG.logoutAccount()">退出账号</a></li>					
+							</ul>
+						</li>
+					</ul>
+					<!-- Modal -->
+					<div id="myModal" class="modal fade" role="dialog">
+					  <div class="modal-dialog">
+						<!-- Modal content-->
+						<div class="modal-content">
+						  <div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title login-header">登录</h4>
+							<h4 class="modal-title register-header">注册</h4>
+							<h4 class="modal-title changePwd-part">修改密码</h4>						
+						  </div>
+						  <div class="modal-body">
+							<form id="loginForm">
+								<div class="form-group">
+									<div class="input-group login-part">
+										<div class="input-group-addon"><i class="fa fa-user-circle"></i></div>
+										<input type="text" class="form-control" id="userAccount" placeholder="在此输入用户名" />
+									</div>									
+								</div>
+								<div class="form-group">
+									<div class="input-group login-part">
+										<div class="input-group-addon" style="padding: 15px;"><i class="fa fa-lock"></i></div>
+										<input type="password" class="form-control" id="userPwd" placeholder="在此输入密码"/>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="input-group regis-part">
+										<div class="input-group-addon"><i class="fa fa-user-o"></i></div>
+										<input type="text" class="form-control" id="userName" placeholder="在此输入姓名" />
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="input-group regis-part">
+										<div class="input-group-addon" style="padding: 10px;"><i class="fa fa-id-card"></i></div>
+										<input type="text" class="form-control" id="userIdentification" placeholder="在此输入身份证号" />
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="input-group regis-part">
+										<div class="input-group-addon"><i class="fa fa-phone"></i></div>
+										<input type="text" class="form-control" id="userPhone" placeholder="在此输入手机号码" />
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="input-group changePwd-part">
+										<div class="input-group-addon" style="padding: 15px;"><i class="fa fa-lock"></i></div>
+										<input type="password" class="form-control" id="userOldPwd" placeholder="在此输入原密码"/>
+									</div>
+								</div><div class="form-group">
+									<div class="input-group changePwd-part">
+										<div class="input-group-addon" style="padding: 15px;"><i class="fa fa-lock"></i></div>
+										<input type="password" class="form-control" id="userNewPwd" placeholder="在此输入新密码"/>
+									</div>
+								</div>
+								<!--<div class='checkbox checkbox-slider--b-flat checkbox-slider-warning login-part'>
+									<label>
+										<input type='checkbox' name="isRemberPwdId" id="isRemberPwdId" />
+										<span id='cb-slider-text1' for="isRemberPwdId">记住密码</span>
+									</label>
+								</div>-->
+								<div class="lr-btn">
+									<button type="button" class="btn btn-primary login-part" id="login-btn" onclick="LG.userLogin()">登&nbsp;&nbsp;&nbsp;录</button>
+									<button type="button" class="btn btn-primary regis-part" id="register-btn" onclick="LG.userRegister()">注&nbsp;&nbsp;&nbsp;册</button>
+									<button type="button" class="btn btn-primary changePwd-part" id="register-btn" onclick="LG.confirmChange()">修&nbsp;&nbsp;改</button>
+									<button type="button" class="btn btn-primary changePwd-part" id="register-btn" onclick="LG.cancelChange()">取&nbsp;&nbsp;消</button>								
+								</div>							
+							</form>
+						  </div>
+						  <div class="modal-footer">
+						  	<p id="messInfo"></p>
+						  	<p class="login-footer regis-part bothFooter">已有账号？快去<a onclick="LG.bottomLogin()">登录</a>吧！</p>
+						  	<p class="register-footer bothFooter">还没有账号？先来<a onclick="LG.bottomRegister()">注册</a>吧！</p>				  	
+						  </div>
+						</div>
+					  </div>
+					</div><!-- End Modal -->
+				</div>
+            </div>
+        </div>
+    </header><!-- End Header -->
+    
+    <!-- ===========================
+        Intro Section
+    =========================== -->
+    <section class="intro nutri-header">
+        <div class="main-nav">
+            <nav class="navbar" id="main-navbar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button> 
+                                <a class="navbar-brand" href="#"><img src="images/brand-logo-modify1.png" alt=""></a>
+                            </div>
+                            <div class="collapse navbar-collapse nopadding" id="navbar-collapse">
+                               <ul class="nav navbar-nav main-menu">
+									<li class=""><a href="index.html">首页</a></li>
+									<li class=""><a href="agri_news.html">农资资讯</a></li>
+									<li class=""><a href="bargain.html">特价商品</a></li>
+									<li class="ordUser-part"><a href="stall_Infor.html">摊位信息</a></li>
+									<li class="ordUser-part"><a href="productOfUser.html">商品管理</a></li>
+									<li class="active"><a href="nutrition_match.html">营养搭配</a></li>
+									<li class="clearfix admin-part"><a href="#">信息管理</a>
+										<ul class="dropdown-menu dropdown-style">
+											<li><a href="userList.html">用户管理</a></li>
+											<li><a href="productList.html">商品管理</a></li>
+											<li><a href="bargin-list.html">摊位管理</a></li>
+											<li><a href="newsList.html">资讯管理</a></li>
+										</ul>
+									</li>
+									<li class=""><a href="team.html">关于我们</a></li>
+									<li class="search admin-part">																											
+										<a href="stall-news.html"><i class="fa fa-bell" id="newsstall"></i></a>
+									</li>
+								</ul>
+                            </div>
+                        </div>
+                    </div> 
+                </div><!-- end conainer -->
+            </nav><!-- end navbar -->
+        </div><!-- Main Menu -->
+        <div class="page-header-image">
+			<div class="container">
+			    <div class="row">
+			        <div class="col-md-12">
+			            <h2 class="page-header-title">营养搭配</h2>
+			            <!--<ol class="breadcrumb">
+                            <li>
+                               <a href="index.html">首页</a>
+                            </li>
+                            <li  class="active">营养搭配</li>
+                        </ol>-->
+			        </div>
+			    </div>
+			</div>
+		</div>
+    </section><!-- End Intro -->
+    
+    <!-- ===========================
+        Blog Content
+    ================================ -->
+    <section class="blog-content" style="margin-top: 5em;">
+        <div class="container">
+            <div class="row">
+                <div id="main">
+				    <div class="col-div">
+				    	<div class="box">
+				      		<div class="box-content">
+				        		<div class="box-text">
+				        			<p>1.以提供能量为主的，主要是碳水化合物含量丰富的粮谷类食物，如面包、馒头等。</p>
+				        			<p>2.以供应蛋白质为主的，主要是肉类、禽蛋类食物。</p>
+				        			<p>3.以供应无机盐和维生素为主的，主要指新鲜蔬菜和水果。</p>
+				        			<p>4.奶类与奶制品、豆制品。</p>
+				        		</div>
+				      		</div>
+					      	<div class="box-icon"><i class="fa fa-beer"></i></div>
+					      	<div class="box-title">完美早餐应包含这几类食物</div>
+				    	</div>
+				    	<div class="box">
+				      		<div class="box-content">
+				        		<div class="box-text">
+				        			<p>鸡肉搭配什么最营养呢？蘑菇？这是因为，蘑菇中含有丰富的鸟苷酸盐，鸡肉含有丰富的肌苷酸盐，在熬制过程中，它们都会释放出游离的谷氨酸钠，产生协同作用，从而使鲜味大大增加。</p>
+				        			<p>牛肉搭配什么最营养健康？牛肉？红肉是铁元素的重要来源，而牛肉中铁含量尤其丰富，遇到富含番茄红素和维生素C的番茄后，牛肉中的铁能够更好地被人体吸收。而在炖牛肉时，加上些番茄，还能让牛肉更快变烂，缩短烹调时间。</p>
+				        			<p></p>
+				        			<p></p>
+				        		</div>
+				      		</div>
+					      	<div class="box-icon"><i class="fa fa-beer"></i></div>
+					      	<div class="box-title">瘦肉搭配什么最有营养最健康？</div>
+				    	</div>
+				    	<div class="box">
+				      		<div class="box-content">
+				        		<div class="box-text">
+				        			<p>红薯怎么吃更营养？</p>
+				        			<p>一是忌生吃。南方不少地方时兴生吃红薯。红薯淀粉含量多，生吃的话消化较困难，最好煮熟吃。高温加热还能使可溶性纤维易消化（消化食品），使其糖链变短，增加红薯甜味。</p>
+				        			<p>二是忌单吃。吃红薯时应当配合其他的谷类（谷类食品）食物。单吃的话，由于蛋白质（蛋白质食品）含量较低，会导致营养摄入不均衡。传统的将红薯切成块，和大米一起熬成粥其实是更科学的。</p>
+				        			<p></p>
+				        		</div>
+				      		</div>
+					      	<div class="box-icon"><i class="fa fa-beer"></i></div>
+					      	<div class="box-title">吃红薯时配点谷类更健康</div>
+				    	</div>
+			    	</div>
+			    	<div class="col-div">
+				    	<div class="box">
+				      		<div class="box-content">
+				        		<div class="box-text">
+				        			<p>1.燕麦：各种谷类粮食当中，以燕麦的钙含量最高。</p>
+				        			<p>2.牛奶：半斤牛奶，含钙300毫克，还含有多种氨基酸，乳酸，矿物质及维生素，促进钙的消化和吸收，而且牛奶中的钙质人体更易吸取。</p>
+				        			<p>3.豆腐：豆腐是植物食品中最好的补钙食品。大豆本身含有不少钙，凝固豆腐的时候还要加入含钙的凝固剂，所以不喝牛奶的人大都会有意识地多吃豆腐。</p>
+				        			<p>4.坚果：榛仁在各种坚果中含钙量最高，每100克炒榛子的钙含量高达815毫克，能够满足成年人一天的钙需求量。</p>
+				        		</div>
+				      		</div>
+					      	<div class="box-icon"><i class="fa fa-beer"></i></div>
+					      	<div class="box-title">补钙要多吃什么食物</div>
+				    	</div>
+				    	<div class="box">
+				      		<div class="box-content">
+				        		<div class="box-text">
+				        			<p>杂粮是多种谷类的总称，杂粮含有丰富的维生素、矿物质与膳食纤维，进食杂粮就可以尽情地摄取人体所需的各种营养，而且还能减肥、抗衰老。</p>
+				        			<p>杂粮种类多，不同种类的杂粮其功效也有不同，在吃杂粮的时候可根据自己的诉求及身体状况任意组合。</p>
+				        			<p></p>
+				        			<p></p>
+				        		</div>
+				      		</div>
+					      	<div class="box-icon"><i class="fa fa-beer"></i></div>
+					      	<div class="box-title">每天吃点杂粮有助抗衰老</div>
+				    	</div>
+				    	<div class="box">
+				      		<div class="box-content">
+				        		<div class="box-text">
+				        			<p>银耳与黑木耳都属于胶质真菌类的植物，都含有丰富的蛋白质和多糖，其食疗保健作用相似。黑木耳含铁较多，从营养素方面比银耳丰富，但银耳的滋补保健作用要高于黑木耳，特别适合阴虚体质的人。从滋补脏腑部位分析，银耳重在补肺，黑木耳重在补肾。银耳多用于药膳，黑木耳重于食疗。</p>
+				        			<p></p>
+				        			<p></p>
+				        			<p></p>
+				        		</div>
+				      		</div>
+					      	<div class="box-icon"><i class="fa fa-beer"></i></div>
+					      	<div class="box-title">黑木耳or银木耳哪个更有营养？</div>
+				    	</div>
+			    	</div>
+			    	<div class="col-div">
+				    	<div class="box">
+				      		<div class="box-content">
+				        		<div class="box-text">
+				        			<p>1.萝卜具有助消化和利尿的作用，能加速体内的新陈代谢，从而起到排毒养颜的作用。</p>
+				        			<p>2.红豆具有利尿消肿的作用，能加速尿液的排空，从而排除毒素。</p>
+				        			<p></p>
+				        			<p></p>
+				        		</div>
+				      		</div>
+					      	<div class="box-icon"><i class="fa fa-beer"></i></div>
+					      	<div class="box-title">排毒养颜的食物有哪些？</div>
+				    	</div>
+				    	<div class="box">
+				      		<div class="box-content">
+				        		<div class="box-text">
+				        			<p>1.木瓜中的木瓜蛋白酶有很好的美白作用。科学家最新研究还发现，存在于木瓜乳状汁液中的木瓜酵素可帮助人体分解肉类蛋白质。</p>
+				        			<p>2.橘子和橙子都含有丰富的维生素C和叶黄素，有很好的抗氧化作用。</p>
+				        			<p>3.草莓还有巩固齿龈、清新口气、滋润咽喉的功效。草莓肉甜汁美，又有一定的抗癌作用。</p>
+				        			<p>4.苹果的膳食纤维含量较高，能对肠胃功能起到双向调节作用，腹泻时吃能起到收敛作用，便秘时吃又能帮助缓解症状。</p>
+				        		</div>
+				      		</div>
+					      	<div class="box-icon"><i class="fa fa-beer"></i></div>
+					      	<div class="box-title">饭后吃什么水果有助于消化？</div>
+				    	</div>
+				    	<div class="box">
+				      		<div class="box-content">
+				        		<div class="box-text">
+				        			<p>1.番茄烧茄子。做茄子最痛苦的事是它很容易吸油。但有番茄就不同了。这道菜能融合番茄的酸和茄子的嫩，将二者营养合二为一，既除去了红烧茄子的油腻，又中和了番茄的酸气，味美色香。</p>
+				        			<p>2.番茄土豆片。这道菜可以防治高血压，因为两种原料有一个共同的特点，都含有丰富的钾，钾能促进血中钠盐的排出，有降压、利尿、消肿作用，对高血压、肾脏病有良好的辅助治疗作用。</p>
+				        			<p>3.番茄炒虾仁。虾仁肉质松软，易于消化，含蛋白质是鱼、蛋、奶的几倍到几十倍，和鸡蛋番茄同炒，虾仁洁白，鸡蛋嫩黄，番茄鲜红，色泽美观，营养均衡，味道可口，还能健脾开胃。</p>
+				        			<p></p>
+				        		</div>
+				      		</div>
+					      	<div class="box-icon"><i class="fa fa-beer"></i></div>
+					      	<div class="box-title">番茄搭配3种菜营养惊人</div>
+				    	</div>
+			    	</div>
+			    	<div class="col-div">
+				    	<div class="box">
+				      		<div class="box-content">
+				        		<div class="box-text">
+				        			<p>体内湿气堪称万病之源，祛除体内的湿气，方法非常简单，只需两个“药”。这两个药能当茶喝，能当饭吃，而且能解决大问题，它们一是薏米，一是红豆。</p>
+				        			<p>薏米红豆粥有个好处，就是怎么熬都不会发黏发稠，底下总是熬烂了的红豆和薏米，上面是淡红色的汤，而薏米和红豆的有效成分大半都在汤里。熬粥的时候，水放得多一些，这些汤就够我们喝半天了，正好可以当茶喝。</p>
+				        			<p></p>
+				        			<p></p>
+				        		</div>
+				      		</div>
+					      	<div class="box-icon"><i class="fa fa-beer"></i></div>
+					      	<div class="box-title">两种食物搭配吃百病不生</div>
+				    	</div>
+				    	<div class="box">
+				      		<div class="box-content">
+				        		<div class="box-text">
+				        			<p>1.豆腐和鱼：鱼汤的鲜美融入到豆腐里，确实好吃。豆腐蛋氨酸含量较少，而鱼类含量非常丰富；鱼类苯丙氨酸含量比较少，而豆腐中则含量较高。这样两者合起来吃，可以取长补短，相辅相成，从而提高营养价值。</p>
+				        			<p>2.豆腐和肉、蛋：营养高一半豆腐虽含有丰富的蛋白质，但缺少一种人体必需的氨基酸———蛋氨酸。如果单独烧菜，蛋白质的利用率则很低。如果将豆腐和其他的肉类、蛋类食物搭配在一起，可以提高豆腐中蛋白质的营养利用率。</p>
+				        			<p></p>
+				        			<p></p>
+				        		</div>
+				      		</div>
+					      	<div class="box-icon"><i class="fa fa-beer"></i></div>
+					      	<div class="box-title">豆腐配啥营养翻倍</div>
+				    	</div>
+				    	<div class="box">
+				      		<div class="box-content">
+				        		<div class="box-text">
+				        			<p>1.早餐：鸡蛋八宝粥+果仁拌时蔬。</p>
+				        			<p>2.午餐：豆米饭+豆豉东北炖。</p>
+				        			<p>3.晚餐：杂粮发糕+胡萝卜鲫鱼汤。</p>
+				        			<p></p>
+				        		</div>
+				      		</div>
+					      	<div class="box-icon"><i class="fa fa-beer"></i></div>
+					      	<div class="box-title">一日三餐巧搭配</div>
+				    	</div>
+			    	</div>
+		    	</div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <!-- ============================
+		Footer
+	============================ -->
+	<footer>
+		<div class="footer-bottom">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-8 copyright">
+						<p>Copyright &copy; 2016.CQU All rights reserved.</p>
+					</div>
+					<div class="col-xs-4 scrool-to-top">
+						<p><a href="#scrolltop"><i class="fa fa-arrow-up"></i></a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer><!-- End Footer -->
+    
+    <!-- jQuery Library -->
+    <script src="js/jquery-1.12.0.min.js"></script>
+	<script src="js/jquery.min.js"></script>    
+    <!--<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+    <script src="js/gmap.js"></script>--->
+    
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.min.js"></script>
+    
+    <!-- Sticky JS -->
+    <script src="js/jquery.sticky.js"></script>
+    
+    <!-- MixitUp JS -->
+    <script src="js/jquery.mixitup.js"></script>
+    
+    <!-- Owl Carousel -->
+    <script src="js/owl.carousel.min.js"></script>
+    
+    <!-- jQuery Counter Up -->
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/venobox.js"></script>
+    <!-- WOW JS -->
+    <script src="js/wow.min.js"></script>
+    
+    <!-- Plugins JS -->
+    <script src="js/plugins.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/custom.js"></script>
+	<script src="js/modernizr.custom.js"></script>	
+	<script src="js/classie.js"></script>	
+	<script src="js/notificationFx.js"></script>	
+	<script src="js/public/md5.js"></script>    
+    <script src="js/public/top.js"></script>
+	<script src="js/public/login.js"></script>
+    <script src="js/public/nutrition_match.js"></script>
+    </body>
+</html>
+

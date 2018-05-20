@@ -1,0 +1,448 @@
+﻿<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>农资资讯</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+        <!-- Place favicon.ico in the root directory -->
+        
+        <!-- Boostrap CSS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        
+        <!-- Owl Carousel -->
+        <link rel="stylesheet" href="css/owl.carousel.css">
+        <link rel="stylesheet" href="css/owl.transitions.css">
+        
+        <!-- Animate CSS -->
+        <link rel="stylesheet" href="css/animate.css">
+        
+        <!-- Google Web Fonts -->
+        <link href="css/googleapi/Lora.css" rel="stylesheet">
+		<link href="css/googleapi/OpenSans.css" rel="stylesheet">
+		<link href="css/googleapi/Roboto.css" rel="stylesheet">
+
+		<!-- Font Awesome Icon -->
+		<link rel="stylesheet" href="css/font-awesome.min.css" />
+		
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+		<link rel="stylesheet" href="css/titatoggle-dist.css" />  
+		<link rel="stylesheet" href="css/balloon.css" />  
+		<link rel="stylesheet" type="text/css" href="css/ns-default.css" />
+		<link rel="stylesheet" type="text/css" href="css/ns-style-growl.css" />
+		
+        <style>
+        	.breadcrumb>.active {color: #ddd !important;}
+        	em, i {font-style: normal;color: #fff;}
+			.top-btn{font-size: 17px;font-weight: bold;padding: 25px !important;}
+			.dropdown-style{min-width: auto !important;}
+			.list-inline li{font-size: 15px;}
+			/*登录框样式*/
+			.top-userName{color: #FF8724 !important;outline: 0;cursor: pointer;font-size: 17px;font-weight: bold;padding: 25px 10px 25px 0 !important;}
+			.top-userName:hover{text-decoration: none;}
+			form .form-group label{display: inline-block;}
+			form .form-group input{width: 400px;display: inline-block;}
+			form .form-group .input-group :focus{
+				-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 10px rgb(31, 166, 218) !important;
+				box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 10px rgb(31, 166, 218) !important;
+				border: 1px solid rgb(31, 166, 218) !important;}
+			.input-group-addon{background-color: rgba(255, 141, 0, 0.72);color: #fff;}
+			form .checkbox{float: right;margin-top: 0px !important;}
+			.checkbox-slider--b-flat input + span {padding-left: 30px;}
+			.lr-btn{text-align:right;}
+			.lr-btn button{width: 100%;}
+			#login-btn, #register-btn{font-weight: bold;}
+			.modal-footer p{margin: 0;}
+			.modal-footer p a{text-decoration: underline;cursor: pointer;color: rgb(255, 135, 36);}
+			.modal-body{padding: 45px 65px 15px 60px !important;}
+			.modal-header{box-shadow: 0px 3px 8px rgb(146, 148, 0);}
+			.modal-body .form-control{font-size: 16px;}
+			.changePwd-part{width:auto !important;}
+			.login-footer, .register-footer{display: inline-block;float: right;}
+			#messInfo{display: inline-block;float: left;color: red;font-weight: bold;}
+			/*登录框样式*/
+			#newsDiv{min-height: 460px;}
+			.news-list{margin: 40px 0;}
+			.news-sidebar{margin: 100px 0;background: rgba(237, 255, 97, 0.24);box-shadow: 0px 3px 15px #ffb100 inset;-webkit-box-shadow: 0px 3px 15px #ffb100 inset;
+				border: 1px solid #ffb100;border-radius: 20px;}
+			.ul_control{list-style: none;padding-left: 0;padding-top: 25px;}
+			.ul_control li{padding: 10px 50px 15px 20px;}
+	    	.ul_control li:last-child{padding-bottom: 35px;}
+	    	.ul_control li p{font-size: 15px;color: #777;text-indent: 1em;}
+	    	.ul_control h4{background: url(images/ico1.gif) no-repeat left center;padding-left: 15px;
+	    		border-bottom: 2px solid #ccc;line-height: 40px;font-size: 18px;}
+	    	.ul_control h4 a{font-size: 24px;font-weight: bold;color: #000000;text-decoration: none;}
+	    	.ul_control p a{font-size: 16px;color: #000000;}
+	    	.ul_control h4 a:hover{color: #ff8724;}
+	    	.ul_control p a:hover, .ul_control h4 a:hover, .ul_control h4 a:visited, .ul_control h4 a:active{text-decoration: none;}
+	    	.news-info{height: 30px;}
+	    	.news-info .btn{width:100px;height: 30px;background: url(images/btn-corner.png) right top no-repeat #ff8724;color: #fff;
+	    		text-align: center;border: 0;border-radius: 0;float: right;}
+	    	.news-info .btn:hover{color:#bb6a13;}
+	    	.sideMenu .btn{width:100px;height: 40px;background: rgba(237, 255, 97, 0.24);color: #ff8724;text-align: left;
+	    		border: 0;border-radius: 0;font-size: 16px;}
+			.sideMenu .btn:hover{background: #ff8724;color: #fff;}
+			.btn-search-active{background: #ff8724 !important;color: #fff !important;}
+			.news-info .btn:focus, .sideMenu .btn:focus{outline:0 none !important;}
+			.news-info .btn:active, .sideMenu .btn:active{outline:0 none !important;}
+			.news-info i{line-height: 2;color: #fff;}
+			.pagination>li>a, .pagination>li>span{color: #999;}
+			.pagination>li>a:hover, .pagination>li>span:hover{color: #ff8724;}
+			.pagination>li>span>input{color:#000}
+			.pagination>li>span:nth-child(2):hover{background: #fff !important;color: #999 !important;}
+			/*背景色渐变兼容*/
+			.gradient{
+			    background: #000000;
+			    background: -moz-linear-gradient(left,  #ff8724 0%, #ffffff 100%);
+			    background: -webkit-gradient(linear, left, right, color-stop(0%,#ff8724), color-stop(100%,#ffffff));
+			    background: -webkit-linear-gradient(left,  #ff8724 0%,#ffffff 100%);
+			    background: -o-linear-gradient(left,  #ff8724 0%,#ffffff 100%);
+			    background: -ms-linear-gradient(left,  #ff8724 0%,#ffffff 100%);
+			    background: linear-gradient(to right,  #ff8724 0%,#ffffff 100%);
+			    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8724', endColorstr='#ffffff',GradientType=0 );
+			}
+			:root .gradient{filter:none;}
+			.widget-title h4{font-weight: bold;}
+			.form-cascade-control:focus{
+				-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(255, 135, 36, 0.74);
+    			box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(255, 135, 36, 0.74);
+    		}
+    		.btn-animate{transition: .4s ease;}
+    		.ns-box{width: 200px;text-align: center;left: 45% !important;z-index: 1500;}
+    		.ns-box p{font-size: 16px !important;color: #fff !important;}
+		</style>
+        
+    </head>
+    <body>
+    <!-- ===========================
+        Header Section
+    =========================== -->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 header-top-contact">
+                    <ul class="list-unstyled list-inline">
+                    	<li>联系管理员:</li>
+                        <li><i class="fa fa-mobile"></i>13368347746</li>
+						<li><i class="fa fa-envelope"></i>theoga85@gmail.com</li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 header-top-social">
+					<ul class="list-unstyled list-inline">
+						<li class="top-consult-btn"><a href="" data-toggle="modal" data-target="#myModal" class="top-btn" onclick="LG.topLogin()"><i class="fa fa-user"></i>登录</a></li>
+						<li class="top-consult-btn"><a href="" data-toggle="modal" data-target="#myModal" class="top-btn" onclick="LG.topRegister()"><i class="fa fa-user-plus"></i>注册</a></li>
+						<li class="top-userInfor" style="display: none;color: #FFFFFF;position: relative;">
+							欢迎回来！<a class="top-userName" id="top-userName"></a> 
+							<ul class="dropdown-menu dropdown-style" style="left: 70px;top: 34px;">
+								<li><a onclick="LG.changePwd()">修改密码</a></li>
+								<li><a onclick="LG.logoutAccount()">退出账号</a></li>					
+							</ul>
+						</li>
+					</ul>
+					<!-- Modal -->
+					<div id="myModal" class="modal fade" role="dialog">
+					  <div class="modal-dialog">
+						<!-- Modal content-->
+						<div class="modal-content">
+						  <div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title login-header">登录</h4>
+							<h4 class="modal-title register-header">注册</h4>
+							<h4 class="modal-title changePwd-part">修改密码</h4>						
+						  </div>
+						  <div class="modal-body">
+							<form id="loginForm">
+								<div class="form-group">
+									<div class="input-group login-part">
+										<div class="input-group-addon"><i class="fa fa-user-circle"></i></div>
+										<input type="text" class="form-control" id="userAccount" placeholder="在此输入用户名" />
+									</div>									
+								</div>
+								<div class="form-group">
+									<div class="input-group login-part">
+										<div class="input-group-addon" style="padding: 15px;"><i class="fa fa-lock"></i></div>
+										<input type="password" class="form-control" id="userPwd" placeholder="在此输入密码"/>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="input-group regis-part">
+										<div class="input-group-addon"><i class="fa fa-user-o"></i></div>
+										<input type="text" class="form-control" id="userName" placeholder="在此输入姓名" />
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="input-group regis-part">
+										<div class="input-group-addon" style="padding: 10px;"><i class="fa fa-id-card"></i></div>
+										<input type="text" class="form-control" id="userIdentification" placeholder="在此输入身份证号" />
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="input-group regis-part">
+										<div class="input-group-addon"><i class="fa fa-phone"></i></div>
+										<input type="text" class="form-control" id="userPhone" placeholder="在此输入手机号码" />
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="input-group changePwd-part">
+										<div class="input-group-addon" style="padding: 15px;"><i class="fa fa-lock"></i></div>
+										<input type="password" class="form-control" id="userOldPwd" placeholder="在此输入原密码"/>
+									</div>
+								</div><div class="form-group">
+									<div class="input-group changePwd-part">
+										<div class="input-group-addon" style="padding: 15px;"><i class="fa fa-lock"></i></div>
+										<input type="password" class="form-control" id="userNewPwd" placeholder="在此输入新密码"/>
+									</div>
+								</div>
+								<!--<div class='checkbox checkbox-slider--b-flat checkbox-slider-warning login-part'>
+									<label>
+										<input type='checkbox' name="isRemberPwdId" id="isRemberPwdId" />
+										<span id='cb-slider-text1' for="isRemberPwdId">记住密码</span>
+									</label>
+								</div>-->
+								<div class="lr-btn">
+									<button type="button" class="btn btn-primary login-part" id="login-btn" onclick="LG.userLogin()">登&nbsp;&nbsp;&nbsp;录</button>
+									<button type="button" class="btn btn-primary regis-part" id="register-btn" onclick="LG.userRegister()">注&nbsp;&nbsp;&nbsp;册</button>
+									<button type="button" class="btn btn-primary changePwd-part" id="register-btn" onclick="LG.confirmChange()">修&nbsp;&nbsp;改</button>
+									<button type="button" class="btn btn-primary changePwd-part" id="register-btn" onclick="LG.cancelChange()">取&nbsp;&nbsp;消</button>								
+								</div>							
+							</form>
+						  </div>
+						  <div class="modal-footer">
+						  	<p id="messInfo"></p>
+						  	<p class="login-footer regis-part bothFooter">已有账号？快去<a onclick="LG.bottomLogin()">登录</a>吧！</p>
+						  	<p class="register-footer bothFooter">还没有账号？先来<a onclick="LG.bottomRegister()">注册</a>吧！</p>				  	
+						  </div>
+						</div>
+					  </div>
+					</div><!-- End Modal -->
+				</div>
+            </div>
+        </div>
+    </header><!-- End Header -->
+    
+    <!-- ===========================
+        Intro Section
+    =========================== -->
+    <section class="intro pages-header blog-header">
+        <div class="main-nav">
+            <nav class="navbar" id="main-navbar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button> 
+                                <a class="navbar-brand" href="#"><img src="images/brand-logo-modify1.png" alt=""></a>
+                            </div>
+                            <div class="collapse navbar-collapse nopadding" id="navbar-collapse">
+                                <ul class="nav navbar-nav main-menu">
+								<li class=""><a href="index.html">首页</a></li>
+								<li class="active"><a href="agri_news.html">农资资讯</a></li>
+								<li class=""><a href="bargain.html">特价商品</a></li>
+								<li class="ordUser-part"><a href="stall_Infor.html">摊位信息</a></li>
+								<li class="ordUser-part"><a href="productOfUser.html">商品管理</a></li>
+								<li class=""><a href="nutrition_match.html">营养搭配</a></li>
+								<li class="clearfix admin-part"><a href="#">信息管理</a>
+									<ul class="dropdown-menu dropdown-style">
+										<li><a href="userList.html">用户管理</a></li>
+										<li><a href="productList.html">商品管理</a></li>
+										<li><a href="bargin-list.html">摊位管理</a></li>
+										<li><a href="newsList.html">资讯管理</a></li>
+									</ul>
+								</li>
+								<li class=""><a href="team.html">关于我们</a></li>
+								<li class="search admin-part">																											
+											<a href="stall-news.html"><i class="fa fa-bell" id="newsstall"></i></a>
+								</li>
+							</ul>
+                            </div>
+                        </div>
+                    </div> 
+                </div><!-- end conainer -->
+            </nav><!-- end navbar -->
+        </div><!-- Main Menu -->
+        <div class="page-header-image">
+			<div class="container">
+			    <div class="row">
+			        <div class="col-md-12">
+			            <h2 class="page-header-title">农资资讯</h2>
+			            <!--<ol class="breadcrumb">
+                            <li>
+                               <a href="index.html">首页</a>
+                            </li>
+                            <li  class="active">农资资讯</li>
+                        </ol>-->
+			        </div>
+			    </div>
+			</div>
+		</div>
+    </section><!-- End Intro -->
+    
+    <!-- ===========================
+        Blog Content
+    ================================ -->
+    <section class="blog-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9 col-md-9 col-lg-9 news-list">
+					<div id="newsDiv">
+						<!--<ul style="margin-top: 50px;min-height: 460px;color: #777;text-align: center;padding-top: 40px;background: rgba(237, 255, 97, 0.24);font-size: 22px">
+							暂无相关内容
+							<li>
+								<h4><a href="agri_newsDetail.html" target="_blank">湖南衡阳查处6起党员干部吸毒案 1正处级吸毒被撤职</a></h4>
+								<p>　　
+									人民网北京11月22日电&nbsp;湖南省纪律检查委员会在官方微信通报了衡阳市纪委监察局的6起党员干部吸毒涉毒典型案例。	衡阳市水务投资集团有限公司原党委委员…
+								</p>
+								<div class="news-info gradient">
+									<i>2016-11-22 15:25&nbsp;</i>
+									<input type="button" class="btn btn-trans" value="更多内容" />
+								</div>
+							</li>
+							<li>
+								<h4><a href="agri_newsDetail.html" target="_blank">湖南衡阳查处6起党员干部吸毒案 1正处级吸毒被撤职</a></h4>
+								<p>　　
+									人民网北京11月22日电&nbsp;湖南省纪律检查委员会在官方微信通报了衡阳市纪委监察局的6起党员干部吸毒涉毒典型案例。	衡阳市水务投资集团有限公司原党委委员…
+								</p>
+								<div class="news-info gradient">
+									<i>2016-11-22 15:25&nbsp;</i>
+									<input type="button" class="btn" value="更多内容" />
+								</div>
+							</li>
+						</ul>-->
+					</div>
+					<!-- 分页开始 -->
+					<div style="padding-right: 50px;">
+						<input type="hidden" name="pageNo" value="1" id="pageNo" />
+						<input type="hidden" name="totalPages" value="1" id="totalPages" />
+						<ul class="pagination pull-right">
+							<li>
+								<a data-balloon="上一页" data-balloon-pos="down" href="javaScript:void(0);" id="pageUp" onclick="goPage('up');">‹</a>
+							</li>
+							<li>
+								<span style="line-height: 21px;min-height: 34px;" id="pageMsg"></span>
+								<span>跳转到:<input type="text" id="toPage" onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')" class="pageipt" value="" /></span>
+								<a id="btn-go" href="javaScript:void(0);" onclick="goPage('page')" data-balloon="跳页" data-balloon-pos="down">GO</a>
+							</li>
+							<li>
+								<a data-balloon="下一页" data-balloon-pos="down" href="javaScript:void(0);" id="pageDown" onclick="goPage('down')">›</a>
+							</li>
+						</ul>
+					</div>
+					<!-- 分页结束 -->
+				</div><!-- End Blog posts -->
+                
+                <!-- Blog Sidebar -->
+                <div class="col-sm-3 news-sidebar">
+                    <div class="sidebar-widget">
+                        <div class="widget-title">
+                            <h4>按月份查找</h4>
+                        </div>
+                        <div class="container-fluid sideMenu">
+							<div class="row">
+								<div class="col-sm-4 col-md-4 col-lg-4"><input type="button" class="btn btn-animate btn-search" id="01" value="2016年1月" /></div>
+								<div class="col-sm-4 col-md-4 col-lg-4 col-md-offset-2 col-lg-offset-2"><input type="button" class="btn btn-animate btn-search" id="02" value="2月" /></div>
+							</div>
+							<div class="row">
+								<div class="col-sm-4 col-md-4 col-lg-4"><input type="button" class="btn btn-animate btn-search" id="03" value="3月" /></div>
+								<div class="col-sm-4 col-md-4 col-lg-4 col-md-offset-2 col-lg-offset-2"><input type="button" class="btn btn-animate btn-search" id="04" value="4月" /></div>
+							</div>
+							<div class="row">
+								<div class="col-sm-4 col-md-4 col-lg-4"><input type="button" class="btn btn-animate btn-search" id="05" value="5月" /></div>
+								<div class="col-sm-4 col-md-4 col-lg-4 col-md-offset-2 col-lg-offset-2"><input type="button" class="btn btn-animate btn-search" id="06" value="6月" /></div>
+							</div>
+							<div class="row">
+								<div class="col-sm-4 col-md-4 col-lg-4"><input type="button" class="btn btn-animate btn-search" id="07" value="7月" /></div>
+								<div class="col-sm-4 col-md-4 col-lg-4 col-md-offset-2 col-lg-offset-2"><input type="button" class="btn btn-animate btn-search" id="08" value="8月" /></div>
+							</div>
+							<div class="row">
+								<div class="col-sm-4 col-md-4 col-lg-4"><input type="button" class="btn btn-animate btn-search" id="09" value="9月" /></div>
+								<div class="col-sm-4 col-md-4 col-lg-4 col-md-offset-2 col-lg-offset-2"><input type="button" class="btn btn-animate btn-search" id="10" value="10月" /></div>
+							</div>
+							<div class="row">
+								<div class="col-sm-4 col-md-4 col-lg-4"><input type="button" class="btn btn-animate btn-search" id="11" value="11月" /></div>
+								<div class="col-sm-4 col-md-4 col-lg-4 col-md-offset-2 col-lg-offset-2"><input type="button" class="btn btn-animate btn-search" id="12" value="12月" /></div>
+							</div>
+						</div>
+                    </div><!-- Ends Sidebar Widgets -->
+                    <div class="sidebar-widget">
+                        <div class="widget-title">
+                            <h4>按关键字查找</h4>
+                        </div>
+                        <div class="widget-content search-widget">
+                           <input type="text" class="form-cascade-control" id="keyword-text" placeholder="在此输入关键字..."/><button id="keyword-search"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div><!-- Ends Sidebar Widgets -->
+                </div><!-- Ends Blog Sidebar -->
+            </div>
+        </div>
+    </section>
+    
+    
+    <!-- ============================
+		Footer
+	============================ -->
+	<footer>
+		<div class="footer-bottom">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-8 copyright">
+						<p>Copyright &copy; 2016.CQU All rights reserved.</p>
+					</div>
+					<div class="col-xs-4 scrool-to-top">
+						<p><a href="#scrolltop"><i class="fa fa-arrow-up"></i></a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer><!-- End Footer -->
+    
+    <!-- jQuery Library -->
+    <script src="js/jquery-1.12.0.min.js"></script>
+	<script src="js/jquery.min.js"></script>    
+    <!--<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+    <script src="js/gmap.js"></script>--->
+    
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.min.js"></script>
+    
+    <!-- Sticky JS -->
+    <script src="js/jquery.sticky.js"></script>
+    
+    <!-- MixitUp JS -->
+    <script src="js/jquery.mixitup.js"></script>
+    
+    <!-- Owl Carousel -->
+    <script src="js/owl.carousel.min.js"></script>
+    
+    <!-- jQuery Counter Up -->
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/venobox.js"></script>
+    <!-- WOW JS -->
+    <script src="js/wow.min.js"></script>
+    
+    <!-- Plugins JS -->
+    <script src="js/plugins.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/custom.js"></script>
+	<script src="js/modernizr.custom.js"></script>	
+	<script src="js/classie.js"></script>	
+	<script src="js/notificationFx.js"></script>	
+	<script src="js/public/md5.js"></script>    
+    <script src="js/public/top.js"></script>
+	<script src="js/public/login.js"></script>
+    <script src="js/public/agri_news.js"></script>
+    </body>
+</html>
+

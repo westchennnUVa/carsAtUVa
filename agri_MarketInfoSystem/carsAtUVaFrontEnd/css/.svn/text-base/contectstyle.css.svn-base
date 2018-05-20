@@ -1,0 +1,533 @@
+/*--events start here--*/
+.events {
+    padding: 5em 5em;
+    /*margin-left: 3em;*/
+}
+.event-month h3 {
+    font-size: 4em;
+    color: #a2b040;
+}
+.event-month h4 {
+    font-size: 1.1em;
+    margin-top: 0.2em;
+    color: #3D3630;
+}
+.event-text h4 {
+    font-size: 2em;
+    color: #f2af00;
+    font-family: 'Marvel', sans-serif;
+}
+.event-text p {
+    font-size: 1em;
+    color:#777676;
+    line-height: 1.8em;
+    margin-top: 0.5em;
+}
+.events-top h3 {
+    font-size: 3em;
+    color:#f2af00;
+    margin-bottom: 1em;
+    font-family: 'Marvel', sans-serif;
+}
+.event-text a {
+    font-size: 0.95em;
+    color: #fff;
+    background:#a2b040;
+    padding: 0.5em 1em;
+    display: inline-block;
+    margin-top: 0.8em;
+    border-radius: 3px;
+}
+.event-text a:hover {
+	background:#f2af00;
+}
+.events-grid {
+    margin-bottom:6em;
+}
+/*--events end here--*/
+/*--educate start here--*/
+.educate {
+    padding: 0em 0em;
+    margin-top: 5em;
+}
+.add-gly{margin-left: 0.12em;margin-top: -0.15em;}
+span.glyphicon.glyphicon-education {
+    font-size: 2em;
+    color: #fff;
+    margin-bottom: 0.25em;
+}
+span.glyphicon.glyphicon-grain{
+	font-size: 2em;
+    color: #fff;
+    margin-bottom: 0.25em;
+}
+span.glyphicon.glyphicon-hourglass{
+	font-size: 2em;
+    color: #fff;
+    margin-bottom: 0.25em;
+}
+span.glyphicon.glyphicon-eye-open{
+	font-size: 2em;
+    color: #fff;
+    margin-bottom: 0.25em;
+}
+/*-- w3layouts --*/
+.ch-info-front{
+    font-size: 1.5em;
+    color: #fff;
+    font-family: 'Marvel', sans-serif;
+    text-align: left;
+}
+.information-con{
+	margin-left: 0em;
+	margin-bottom: 1em;
+}
+.code_style{
+	font-size: 1.5em;
+    color:wheat;;
+    font-family: 'Marvel', sans-serif;
+    margin-top:1em;
+}
+.code_title{
+	margin-top: 2em;
+}
+.button-style{
+	margin-top: 2em;
+}
+.btn-do{
+	margin-left:0.5em;
+}
+.we-do {
+    padding-bottom: 5em;
+}
+/*--comment style start here--*/
+.ch-grid {
+	margin: 20px 0 0 0;
+	padding: 0;
+	list-style: none;
+	display: block;
+	text-align: center;
+	width: 100%;
+}
+
+.ch-grid:after,
+.ch-item:before {
+	content: '';
+    display: table;
+}
+
+.ch-grid:after {
+	clear: both;
+}
+
+.ch-grid li {
+	width: 250px;
+	height: 220px;
+	display: inline-block;
+}
+/*--*/
+.ch-item {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	position: relative;
+	cursor: default;
+	-webkit-perspective: 900px;
+	-moz-perspective: 900px;
+	-o-perspective: 900px;
+	-ms-perspective: 900px;
+	perspective: 900px;
+}
+/*-- agileits --*/
+.ch-info{
+	position: absolute;
+	width: 130%;
+	height: 130%;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+.ch-info > div {
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-position: center center;
+	-webkit-transition: all 0.4s linear;
+	-moz-transition: all 0.4s linear;
+	-o-transition: all 0.4s linear;
+	-ms-transition: all 0.4s linear;
+	transition: all 0.4s linear;
+	-webkit-transform-origin: 50% 0%;
+	-moz-transform-origin: 50% 0%;
+	-o-transform-origin: 50% 0%;
+	-ms-transform-origin: 50% 0%;
+	transform-origin: 50% 0%;
+}
+
+.ch-info .ch-info-front {
+	    padding-top: 2em;
+}
+.ch-info .ch-info-back {
+	-webkit-transform: translate3d(0,0,-220px) rotate3d(1,0,0,90deg);
+	-moz-transform: translate3d(0,0,-220px) rotate3d(1,0,0,90deg);
+	-o-transform: translate3d(0,0,-220px) rotate3d(1,0,0,90deg);
+	-ms-transform: translate3d(0,0,-220px) rotate3d(1,0,0,90deg);
+	transform: translate3d(0,0,-220px) rotate3d(1,0,0,90deg);
+	background:#3D3630;
+	opacity: 0;
+}
+
+.ch-img-1 { 
+	background:#3D3630;
+}
+
+.ch-img-2 { 
+	background:#b7295a;
+}
+
+.ch-img-3 { 
+	background:#a2b040;
+}
+/*-- w3layouts --*/
+.ch-img-4 { 
+	background:#f2af00;
+}
+.ch-info h3 {
+	color: #fff;
+	font-size: 24px;
+	margin: 0 15px;
+	padding: 60px 0 0 0;
+	height:90px;
+	font-family: 'Marvel', sans-serif;
+}
+.ch-info p {
+    color: #fff;
+    padding:7px 5px;
+    margin: 0 30px;
+    font-size: 13px;
+    line-height: 1.8em;
+}
+.ch-info p a {
+	display: block;
+	color: #fff;
+	color: rgba(255,255,255,0.7);
+	font-style: normal;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 9px;
+	letter-spacing: 1px;
+	padding-top: 4px;
+	font-family: 'Open Sans', Arial, sans-serif;
+}
+
+.ch-info p a:hover {
+	color: #fff222;
+	color: rgba(255,242,34, 0.8);
+}
+
+.ch-item:hover .ch-info-front {
+	-webkit-transform: translate3d(0,280px,0) rotate3d(1,0,0,-90deg);
+	-moz-transform: translate3d(0,280px,0) rotate3d(1,0,0,-90deg);
+	-o-transform: translate3d(0,280px,0) rotate3d(1,0,0,-90deg);
+	-ms-transform: translate3d(0,280px,0) rotate3d(1,0,0,-90deg);
+	transform: translate3d(0,280px,0) rotate3d(1,0,0,-90deg);
+	opacity: 0;
+}
+
+.ch-item:hover .ch-info-back {
+	-webkit-transform: rotate3d(1,0,0,0deg);
+	-moz-transform: rotate3d(1,0,0,0deg);
+/*-- agileits --*/
+	-o-transform: rotate3d(1,0,0,0deg);
+	-ms-transform: rotate3d(1,0,0,0deg);
+	transform: rotate3d(1,0,0,0deg);
+	opacity: 1;
+}
+/*--educate end here--*/
+/*--gallery start here--*/
+.product-front{
+	font-size: 1em;
+	color: white;
+	text-align: left;
+}
+.gallery {
+    padding: 0em 0em;
+    margin-top: 3em;
+}
+.gallery-top {
+    text-align: center;
+    padding: 0em 0em 3em 0em;
+}
+.gallery-top h2 {
+    font-size: 3em;
+    color:#a2b040;
+    margin-bottom: 0.2em;
+    font-family: 'Marvel', sans-serif;
+}
+.gallery-top p {
+    font-size: 1em;
+    font-weight: 400;
+    color:#777676;
+    line-height: 1.8em;
+    margin: 0 auto 0em;
+    width: 50%;
+}
+.gallery-grid {
+    margin-bottom: 2em;
+}
+.bs-docs-dl-options h4 {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.ih-item {
+  position: relative;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+.ih-item,
+.ih-item * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.ih-item a {
+  color: #333;
+}
+.ih-item a:hover {
+  text-decoration: none;
+}
+.ih-item img {
+  width: 100%;
+  height: 100%;
+}
+
+.ih-item.circle {
+  position: relative; 
+}
+.ih-item.circle .img {
+  position: relative;
+}
+.ih-item.circle .img:before {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 0 0 1px rgba(101, 99, 99, 0.6), 0 1px 2px rgba(0, 0, 0, 0.3);
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+.ih-item.circle .img img {
+  
+}
+.ih-item.circle .info {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.ih-item.square {
+  position: relative;
+  width: 316px;
+  height: 216px;
+  border: 8px solid #fff;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+.ih-item.square .info {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+/*---*/
+.ih-item.square.effect4 {
+  overflow: hidden;
+  position: relative;
+}
+.ih-item.square.effect4.colored .info {
+  background: rgba(12, 34, 52, 0.6);
+}
+.ih-item.square.effect4.colored .mask1,
+.ih-item.square.effect4.colored .mask2 {
+  background: #1a4a72;
+  background: rgba(26, 74, 114, 0.6);
+}
+.ih-item.square.effect4 .img {
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+.ih-item.square.effect4 .mask1,
+.ih-item.square.effect4 .mask2 {
+  position: absolute;
+  background: #333333;
+  background: rgba(0, 0, 0, 0.6);
+  height: 361px;
+  width: 361px;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+.ih-item.square.effect4 .mask1 {
+  left: auto;
+  right: 0;
+  top: 0;
+  -webkit-transform: rotate(56.5deg) translateX(-180px);
+  -moz-transform: rotate(56.5deg) translateX(-180px);
+  -ms-transform: rotate(56.5deg) translateX(-180px);
+  -o-transform: rotate(56.5deg) translateX(-180px);
+  transform: rotate(56.5deg) translateX(-180px);
+  -webkit-transform-origin: 100% 0%;
+  -moz-transform-origin: 100% 0%;
+  -ms-transform-origin: 100% 0%;
+  -o-transform-origin: 100% 0%;
+  transform-origin: 100% 0%;
+}
+.ih-item.square.effect4 .mask2 {
+  top: auto;
+  bottom: 0;
+  left: 0;
+  -webkit-transform: rotate(56.5deg) translateX(180px);
+  -moz-transform: rotate(56.5deg) translateX(180px);
+  -ms-transform: rotate(56.5deg) translateX(180px);
+  -o-transform: rotate(56.5deg) translateX(180px);
+  transform: rotate(56.5deg) translateX(180px);
+  -webkit-transform-origin: 0% 100%;
+  -moz-transform-origin: 0% 100%;
+  -ms-transform-origin: 0% 100%;
+  -o-transform-origin: 0% 100%;
+  transform-origin: 0% 100%;
+}
+.ih-item.square.effect4 .info {
+  background:;
+  height: 0;
+  visibility: hidden;
+  width: 361px;
+  -webkit-transform: rotate(-33.5deg) translate(-112px, 166px);
+  -moz-transform: rotate(-33.5deg) translate(-112px, 166px);
+  -ms-transform: rotate(-33.5deg) translate(-112px, 166px);
+  -o-transform: rotate(-33.5deg) translate(-112px, 166px);
+  transform: rotate(-33.5deg) translate(-112px, 166px);
+  -webkit-transform-origin: 0% 100%;
+  -moz-transform-origin: 0% 100%;
+  -ms-transform-origin: 0% 100%;
+  -o-transform-origin: 0% 100%;
+  transform-origin: 0% 100%;
+  -webkit-transition: all 0.35s ease-in-out 0.35s;
+  -moz-transition: all 0.35s ease-in-out 0.35s;
+  transition: all 0.35s ease-in-out 0.35s;
+}
+.ih-item.square.effect4 .info h3 {
+    color: #fff;
+    text-align: center;
+    font-size: 28px;
+    padding: 5px;
+    background: transparent;
+    margin-top: 10px;
+    opacity: 0;
+    -webkit-transition: all 0.35s ease-in-out 0.35s;
+    -moz-transition: all 0.35s ease-in-out 0.35s;
+    transition: all 0.35s ease-in-out 0.35s;
+    font-family: 'Marvel', sans-serif;
+}
+.ih-item.square.effect4 .info p {   
+    font-size: 14px;
+    position: relative;
+    color: #fff;
+    padding:2px 10px 10px;
+    text-align: center;
+    opacity: 0;
+    -webkit-transition: all 0.35s ease-in-out 0.35s;
+    -moz-transition: all 0.35s ease-in-out 0.35s;
+    transition: all 0.35s ease-in-out 0.35s;
+}
+.ih-item.square.effect4:hover .mask1 {
+  -webkit-transform: rotate(56.5deg) translateX(1px);
+  -moz-transform: rotate(56.5deg) translateX(1px);
+  -ms-transform: rotate(56.5deg) translateX(1px);
+  -o-transform: rotate(56.5deg) translateX(1px);
+  transform: rotate(56.5deg) translateX(1px);
+}
+.ih-item.square.effect4:hover .mask2 {
+  -webkit-transform: rotate(56.5deg) translateX(-1px);
+  -moz-transform: rotate(56.5deg) translateX(-1px);
+  -ms-transform: rotate(56.5deg) translateX(-1px);
+  -o-transform: rotate(56.5deg) translateX(-1px);
+  transform: rotate(56.5deg) translateX(-1px);
+}
+.ih-item.square.effect4:hover .info {
+  width: 300px;
+  height:190px;
+  visibility: visible;
+  top: 5px;
+  -webkit-transform: rotate(0deg) translate(0, 0);
+  -moz-transform: rotate(0deg) translate(0, 0);
+  -ms-transform: rotate(0deg) translate(0, 0);
+  -o-transform: rotate(0deg) translate(0, 0);
+  transform: rotate(0deg) translate(0, 0);
+}
+.ih-item.square.effect4 a:hover .info h3,
+.ih-item.square.effect4 a:hover .info p {
+  opacity: 1;
+}
+#description{
+	margin-top: 2em;
+	font-size: 1.2em;
+	ont-weight: 400;
+}
+.box{width:300px;height:200px;margin:10px;position:relative;}
+.word{left:0;top:0;position:absolute;font-size:1.2em;color:#000;text-align:center;font-family: "微软雅黑";font-weight: 600;}
+/*--gallery end here--*/
+/*--bargin-list--*/
+.team{
+	padding:5em 0;
+	text-align:center;
+}
+.team-grids {
+    margin-top: 4em;
+}
+.team-gd h4 {
+    font-size: 2em;
+    color: #F19E1F;
+	padding-top: 1em;
+}
+.team-gd {
+	line-height: 20px;
+	height: 80px;
+    border: 5px solid#F19E1F;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    border-radius: 30px 5px 30px 5px;
+}
+.team-gd:hover {
+    border: 5px solid#e44514;
+}
+.team-gd p {
+    margin-bottom: 1em;
+	font-size:1em;
+	line-height:1.8em;
+}
+.team-gd{
+	margin-bottom: 1em;
+	margin-left: 2.8em;
+}
+/*end*/
+
