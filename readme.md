@@ -3,9 +3,9 @@ This is a web application for students who are from UVa and want to buy or sell 
 This is a serverless web application!
 
 ## FrontEnd
-HTML
-CSS
-Bootstrap
+HTML<br>
+CSS<br>
+Bootstrap<br>
 jQuery
 
 ## BackEnd and Database
